@@ -1,0 +1,54 @@
+@import "../variables";
+
+.icon-animated {
+    position: relative;
+
+    * {
+        transition: all 0.5s;
+    }
+}
+
+.icon-houseradar {
+    #houseradar-line-medium {
+        transform-origin: bottom center;
+        transform: scale(0.9);
+    }
+
+    #houseradar-line-small {
+        transform-origin: bottom center;
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    #houseradar-line-large {
+        transform-origin: bottom center;
+        transform: scale(0.9);
+    }
+}
+
+.goals__item {
+    &:hover {
+        .icon-chart2 {
+            #chart2-cilinder {
+                transform: translateY(-5%);
+                transform-origin: bottom center;
+            }
+        }
+
+        .icon-houseradar {
+            #houseradar-line-medium {
+                transform: scale(1);
+            }
+
+            #houseradar-line-small {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            #houseradar-line-large {
+                transform: scale(1);
+            }
+        }
+    }
+}
+

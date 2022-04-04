@@ -1,0 +1,52 @@
+@import "../variables";
+
+// Список новостей
+.news {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    align-items: start;
+    gap: var(--spacer-15);
+  }
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--spacer-1);
+
+  &__image {
+    margin-bottom: var(--spacer-4);
+    max-height: 200px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__pretitle {
+    color: var(--color-ternary);
+  }
+
+  &__title {
+  }
+
+  &__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    color: var(--color-secondary);
+  }
+
+  &__to-link {
+    color: var(--color-brand);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

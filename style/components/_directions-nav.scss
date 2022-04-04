@@ -1,0 +1,91 @@
+@import "../variables";
+
+.directions-nav {
+    margin-top: 5vh;
+
+    &:hover {
+        cursor: default;
+    }
+
+    @media (min-width: $screen-desktop-s) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 60vh;
+        grid-template-areas: 'platform building oilrig''img img img';
+        max-height: calc(100vh - 100px);
+    }
+
+    &__item {
+        padding-left: var(--spacer-4);
+        border-left: 1px solid rgba(255,255,255,.001);
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &.for-platform {
+            grid-area: platform;
+        }
+
+        &.for-building {
+            grid-area: building;
+        }
+
+        &.for-oilrig {
+            grid-area: oilrig;
+        }
+
+        &:hover {
+            --dir-nav-title-color: var(--color-link-hover);
+            --dir-nav-content-opacity: 1;
+            --dir-nav-content-offset: 0;
+            border-color: var(--color-link);
+
+            & > * {
+                transition-delay: 0;
+            }
+        }
+    }
+
+    &__item-title {
+        color: var(--dir-nav-title-color);
+        margin-bottom: var(--spacer-2);
+    }
+
+    &__item-description {
+        max-width: 85%;
+        margin-bottom: var(--spacer-3);
+        transform: translateY(var(--dir-nav-content-offset, -10px));
+        opacity: var(--dir-nav-content-opacity, 1);
+        transition: opacity .2s, transform .2s;
+    }
+
+    &__item-link {
+        transform: translateY(var(--dir-nav-content-offset, -10px));
+        opacity: var(--dir-nav-content-opacity, 0);
+        transition: .2s opacity .2s, .2s transform .2s;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    &__image {
+        grid-area: img;
+  
+        img {
+            height: 100%;
+            object-fit: cover;
+            margin: auto;
+            opacity: 0;
+            transition: .35s opacity .35s;
+        }
+    }
+
+    .for-platform:hover ~ .for-platform,
+    .for-building:hover ~ .for-building,
+    .for-oilrig:hover ~ .for-oilrig {
+        img {
+            opacity: 1;
+            transition: .35s opacity .35s, transform .1s;
+        }
+    }
+}

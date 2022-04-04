@@ -1,0 +1,44 @@
+@import "../variables";
+
+.customers {
+  padding: var(--spacer-6) 0;
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacer-8);
+  }
+}
+
+.customer-card {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--spacer-1);
+  padding: var(--spacer-8);
+  border: 1px solid var(--bg-soft);
+
+  &__logo {
+    max-width: 100%;
+    height: 80px;
+    margin-top: var(--spacer-5);
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {}
+
+  &__description {
+    color: var(--color-secondary);
+  }
+
+  &__link {}
+
+  &__summary {
+    margin-top: var(--spacer-6);
+  }
+
+}
