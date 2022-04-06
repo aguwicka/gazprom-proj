@@ -1,189 +1,21 @@
 @import "../variables";
 
 .goals {
-    display: grid;
-    padding: var(--spacer-8) 0;
-
-    @media (min-width: $screen-tablet) {
-        grid-template-columns: repeat(var(--goals-cols, 3), 1fr);
-        gap: var(--goals-gap, var(--spacer-4));
-    }
-
-    @media (max-width: $screen-desktop-s) and (pointer: coarse) {
-        gap: var(--spacer-2);
-    }
-
-    &__item {
-        padding: var(--spacer-3) var(--spacer-2);
-        border-radius: var(--border-radius);
-        background: var(--bg-default);
-        
-        @media (pointer: coarse) {
-            box-shadow: var(--shadow-1);
-        }
-
-        @media (max-width: $screen-tablet) {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-        }
-    }
-
-    &__icon {
-        margin-bottom: var(--spacer-2);
-        
-        // транзитим все что в иконке
-        & * {
-            transition: all .2s;
-        }
-
-        .dark-theme & {
-            filter: invert(1) hue-rotate(180deg);
-        }
-    }
-
-    &__title {
-        margin-bottom: var(--spacer-2);
-        font-weight: bold;
-    }
-
-    &__description {
-        @media (max-width: $screen-tablet) {
-            text-align: center;
-        }
-    }
 }
 
-// Иконки при ховере
-.goals {
-    &__icon {
-        position: relative;
-        display: inline-flex;
-        height: 55px;
+.goal-card {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  gap: var(--spacer-1);
+  text-align: center;
 
-        &.has-animated-icon {
-            &:after {
-                content: '';
-                position: absolute;
-                top: -4px;
-                right: -8px;
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                background: var(--bg-icon);
-            }
-        }
+  &__icon {
+    margin-bottom: var(--spacer-1);
+    color: var(--color-brand);
+  }
 
-        [class*='anim-icon'] {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .anim-icon-houseradar {
-            #houseradar-line-medium {
-                transform-origin: bottom center;
-                transform: scale(0.9);
-            }
-
-            #houseradar-line-small {
-                transform-origin: bottom center;
-                transform: scale(0.9);
-                opacity: 0;
-            }
-
-            #houseradar-line-large {
-                transform-origin: bottom center;
-                transform: scale(0.9);
-            }
-        }
-
-        .anim-icon-ide {
-            transform: translateY(5px);
-
-            #ide-check {
-                opacity: 0;
-                transform: scale(0.5);
-                transform-origin: center right;
-                transform-box: fill-box;
-                transition-delay: 0.6s;
-            }
-
-            #ide-line2,
-            #ide-line3,
-            #ide-line4,
-            #ide-line5 {
-                opacity: 0;
-                transform: scale(0.95);
-                transform-origin: top center;
-            }
-        }
-    }
-
-    &__item:hover {
-        .goals {
-            &__icon {
-                .anim-icon-chart2 {
-                    #chart2-cilinder {
-                        transform: translateY(-5%);
-                        transform-origin: bottom center;
-                    }
-                }
-
-                .anim-icon-houseradar {
-                    #houseradar-line-medium {
-                        transform: scale(1);
-                    }
-
-                    #houseradar-line-small {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-
-                    #houseradar-line-large {
-                        transform: scale(1);
-                    }
-                }
-
-                .anim-icon-chart1 {
-                    #chart1-big-col {
-                        transform: scaleY(0.9);
-                        transform-origin: bottom center;
-                    }
-                }
-
-                .anim-icon-ide {
-                    #ide-check {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-
-                    #ide-line2,
-                    #ide-line3,
-                    #ide-line4,
-                    #ide-line5 {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-
-                    #ide-line2 {
-                        transition-delay: 0.1s;
-                    }
-                    
-                    #ide-line3 {
-                        transition-delay: 0.2s;
-                    }
-                    
-                    #ide-line4 {
-                        transition-delay: 0.3s;
-                    }
-                    
-                    #ide-line5 {
-                        transition-delay: 0.4s;
-                    }
-                }
-            }
-        }
-    }
+  &__description {
+    width: #{'max(60%, 280px)'};
+  }
 }

@@ -681,7 +681,11 @@ p {
 }
 
 .app-section {
-  padding: var(--spacer-10) 0;
+  padding: var(--spacer-8) 0;
+}
+
+.app-section.is-dark + .app-section.is-dark {
+  padding-top: 0;
 }
 
 .app-section:last-child {
@@ -1436,14 +1440,15 @@ p {
 .features__items {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(270px, 340px))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(270px, 340px));
+  -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  gap: var(--spacer-10);
 }
 
 .feature-card {
@@ -1452,7 +1457,6 @@ p {
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   gap: var(--spacer-2);
-  padding: var(--spacer-5);
 }
 
 .feature-card__icon {
@@ -1637,6 +1641,25 @@ p {
 
 .stat-card__description:empty {
   display: none;
+}
+
+.goal-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  justify-items: center;
+  gap: var(--spacer-1);
+  text-align: center;
+}
+
+.goal-card__icon {
+  margin-bottom: var(--spacer-1);
+  color: var(--color-brand);
+}
+
+.goal-card__description {
+  width: max(60%, 280px);
 }
 
 .app-footer__content {
