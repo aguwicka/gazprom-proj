@@ -1,7 +1,11 @@
 @import "../variables";
 
 .app-section {
-  padding: var(--spacer-10) 0;
+  padding: var(--spacer-8) 0;
+
+  &.is-dark + &.is-dark {
+    padding-top: 0;
+  }
 
   &:last-child {
     padding-bottom: var(--spacer-20);
