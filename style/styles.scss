@@ -11,15 +11,15 @@
 @import "common/app-layouts";
 @import "common/app-section";
 @import "common/case";
+@import "common/just-media";
+@import "common/links";
+@import "common/list";
 
 // @import "common/text-hashtag";
-@import "common/links";
 // @import "common/checklist-simple";
 // @import "common/checklist";
 // @import "common/dropdown";
 // @import "common/briefcase-popup";
-
-// @import "common/briefcase";
 // @import "common/img-grid";
 // @import "common/icon-animation";
 
@@ -33,6 +33,9 @@
 @import "components/features";
 @import "components/projects";
 @import "components/persons";
+@import "components/stats";
+@import "components/app-footer";
+@import "components/theme-switcher";
 
 
 // @import "components/welcome";
@@ -43,6 +46,4 @@
 // @import "components/stages";
 // @import "components/contacts";
 // @import "components/app-more";
-@import "components/app-footer";
 // @import "components/news-detail";
-@import "components/theme-switcher";

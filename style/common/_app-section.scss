@@ -32,7 +32,6 @@
 
   &__header {
     margin-bottom: var(--spacer-8);
-    max-width: 650px;
 
     .as-banner & {
       display: grid;
@@ -93,7 +92,7 @@
   }
 
   &__description {
-    max-width: 500px;
+    max-width: 650px;
 
     .as-banner & {
       position: relative;
