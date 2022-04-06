@@ -28,6 +28,8 @@
   }
 
   &__content {
+    border-radius: 4px;
+
     .is-dark & {
       padding: var(--spacer-8) var(--spacer-11);
       background: var(--bg-soft);

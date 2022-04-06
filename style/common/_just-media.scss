@@ -1,6 +1,9 @@
 @import "../variables";
 
 .just-media {
+  border-radius: 4px;
+  overflow: hidden;
+
   &:not(:first-child) {
     margin-top: var(--spacer-8);
   }
