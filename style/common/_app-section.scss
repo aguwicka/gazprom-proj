@@ -3,6 +3,18 @@
 .app-section {
   padding: var(--spacer-8) 0;
 
+  &:last-child {
+    padding-bottom: var(--spacer-20);
+  }
+
+  @media (max-width: 949px) {
+    padding: clamp(var(--spacer-5), 3vw, var(--spacer-7)) 0;
+
+    &:last-child {
+      padding-bottom: var(--spacer-10);
+    }
+  }
+
   &.has-image {
     .container {
       display: grid;
@@ -18,10 +30,6 @@
     padding-top: 0;
   }
 
-  &:last-child {
-    padding-bottom: var(--spacer-20);
-  }
-
   &.as-banner {
     position: relative;
     height: 350px;
@@ -29,6 +37,11 @@
     background-image: var(--app-section-bg, none);
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (max-width: 949px) {
+      height: clamp(250px, 20vw, 350px);
+      padding: clamp(var(--spacer-10), 5vw, var(--spacer-16)) 0;
+    }
 
     &::before {
       content: "";
@@ -44,7 +57,7 @@
     @media (max-width: 749px) {
       max-height: 230px;
     }
-    
+
     img {
       height: 100%;
       width: 100%;
@@ -62,7 +75,9 @@
   }
 
   &__header {
-    margin-bottom: var(--spacer-8);
+    &:not(:only-child) {
+      margin-bottom: var(--spacer-8);
+    }
 
     .as-banner & {
       display: grid;
