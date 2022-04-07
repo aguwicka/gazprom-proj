@@ -150,24 +150,17 @@
 }
 
 .container {
-  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: max(var(--spacer-2), 5vw);
-  padding-right: max(var(--spacer-2), 5vw);
-}
-
-@media (max-width: 668px) and (pointer: coarse) {
-  .container {
-    max-width: 400px;
-  }
+  padding-left: clamp(var(--spacer-2), 5vw, var(--spacer-4));
+  padding-right: clamp(var(--spacer-2), 5vw, var(--spacer-4));
 }
 
 @media (min-width: 950px) {
   .container {
     max-width: 960px;
-    padding-left: max(var(--spacer-4), 5vw);
-    padding-right: max(var(--spacer-4), 5vw);
+    padding-left: clamp(var(--spacer-4), 5vw, var(--spacer-6));
+    padding-right: clamp(var(--spacer-4), 5vw, var(--spacer-6));
   }
 }
 
