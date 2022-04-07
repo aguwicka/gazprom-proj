@@ -58,6 +58,7 @@
   }
 
   &__pri {
+    // position: relative;
     background-color: var(--bg-header-pri);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
     transition: background-color 0.2s linear;
@@ -76,7 +77,7 @@
 
   &__pri-nav {
     display: flex;
-    gap: clamp(var(--spacer-2), 4vw, var(--spacer-16));
+    // gap: clamp(var(--spacer-2), 4vw, var(--spacer-16));
     justify-content: flex-end;
   }
 
