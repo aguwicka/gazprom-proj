@@ -1441,8 +1441,8 @@ p {
 .directions__items {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(440px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: var(--spacer-15);
   margin-left: calc(-1*var(--spacer-3));
   margin-right: calc(-1*var(--spacer-3));
@@ -1452,8 +1452,8 @@ p {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(120px, 1fr) minmax(1px, 2fr);
-      grid-template-columns: minmax(120px, 1fr) minmax(1px, 2fr);
+  -ms-grid-columns: 170px minmax(1px, 1fr);
+      grid-template-columns: 170px minmax(1px, 1fr);
   -ms-grid-rows: auto auto minmax(1px, 1fr);
       grid-template-rows: auto auto minmax(1px, 1fr);
       grid-template-areas: "image pretitle" "image title" "image description";
@@ -1462,20 +1462,6 @@ p {
   border-radius: 8px;
   -webkit-box-shadow: var(--direction-card-shadow, none);
           box-shadow: var(--direction-card-shadow, none);
-}
-
-@media (max-width: 949px) {
-  .direction-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-shadow: var(--shadow-2);
-            box-shadow: var(--shadow-2);
-  }
 }
 
 .direction-card:hover {
@@ -1492,12 +1478,6 @@ p {
   height: 174px;
   border-radius: 4px;
   overflow: hidden;
-}
-
-@media (max-width: 949px) {
-  .direction-card__image {
-    width: 100%;
-  }
 }
 
 .direction-card__image img {
