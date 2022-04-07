@@ -29,6 +29,10 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 
+  @media (max-width: 949px) {
+    --app-top-padding: 68px;
+  }
+
   &.has-opened-mobile-menu {
     overflow: hidden;
   }
@@ -55,8 +59,8 @@
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--spacer-2);
-  padding-right: var(--spacer-2);
+  padding-left: #{'max(var(--spacer-2), 5vw)'};
+  padding-right: #{'max(var(--spacer-2), 5vw)'};
 
   @media (max-width: $screen-tablet) and (pointer: coarse) {
     max-width: 400px;
@@ -64,13 +68,11 @@
 
   @media (min-width: $screen-desktop-s) {
     max-width: 960px;
+    padding-left: #{'max(var(--spacer-4), 5vw)'};
+    padding-right: #{'max(var(--spacer-4), 5vw)'};
   }
 
   @media (min-width: $screen-desktop-s) {
     max-width: 1150px;
   }
-
-  // @media (min-width: $screen-desktop-l) {
-  //   max-width: 1376px;
-  // }
 }
