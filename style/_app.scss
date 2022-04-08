@@ -56,15 +56,16 @@
 }
 
 .container {
+  --container-padding-x: clamp(var(--spacer-2), 3vw, var(--spacer-4));
+  --container-padding-x-negative: calc(-1 * var(--container-padding-x));
+  
   margin-left: auto;
   margin-right: auto;
-  padding-left: #{'clamp(var(--spacer-2), 3vw, var(--spacer-4))'};
-  padding-right: #{'clamp(var(--spacer-2), 3vw, var(--spacer-4))'};
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
 
   @media (min-width: $screen-desktop-s) {
-    max-width: 960px;
-    padding-left: #{'clamp(var(--spacer-4), 3vw, var(--spacer-5))'};
-    padding-right: #{'clamp(var(--spacer-4), 3vw, var(--spacer-5))'};
+    --container-padding-x: clamp(var(--spacer-4), 3vw, var(--spacer-5));
   }
 
   @media (min-width: $screen-desktop-s) {

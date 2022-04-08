@@ -8,6 +8,11 @@
     padding-top: var(--spacer-16);
     padding-bottom: var(--spacer-16);
     border-top: 1px solid var(--bg-soft);
+
+    @media (max-width: 949px) {
+      padding-top: var(--spacer-6);
+      padding-bottom: var(--spacer-6);
+    }
   }
 
   &__nav {
@@ -15,6 +20,10 @@
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     align-items: start;
     gap: var(--spacer-15);
+
+    @media (max-width: 949px) {
+      display: none;
+    }
   }
 
   &__col {
@@ -73,6 +82,12 @@
 
     &:hover {
       color: var(--color-secondary);
+    }
+  }
+
+  .for-cookies {
+    @media (max-width: 949px) {
+      display: none;
     }
   }
 
