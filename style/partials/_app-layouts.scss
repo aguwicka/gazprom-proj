@@ -6,8 +6,8 @@
 
 .layout-news {
   display: grid;
-  grid-template-columns: 100% 250px;
-  gap: var(--spacer-6);
+  grid-template-columns: minmax(1px, 1fr) 250px;
+  gap: var(--spacer-10);
 
   @media (max-width: 949px) {
     grid-template-columns: 100%;

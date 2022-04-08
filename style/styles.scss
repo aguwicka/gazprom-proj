@@ -7,7 +7,7 @@
 //        url('../assets/fonts/HeliosLightC Regular.otf') format('truetype');
 // }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
 
 @import "variables";
 
@@ -32,6 +32,9 @@
 @import "partials/directions";
 @import "partials/parts";
 @import "partials/news";
+@import "partials/news-page";
+@import "partials/news-addons";
+@import "partials/news-list";
 @import "partials/company-parts";
 @import "partials/customers";
 @import "partials/features";

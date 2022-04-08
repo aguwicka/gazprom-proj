@@ -30,7 +30,11 @@
     padding-top: 0;
   }
 
-  &.as-banner {
+  &.as-banner.has-no-bg {
+    padding-bottom: 0;
+  }
+
+  &.as-banner:not(.has-no-bg) {
     position: relative;
     height: 350px;
     padding: var(--spacer-16) 0;
@@ -43,10 +47,10 @@
       padding: clamp(var(--spacer-10), 5vw, var(--spacer-16)) 0;
     }
 
-    &::before {
+    &:not(.has-no-bg)::before {
       content: "";
       position: absolute;
-      inset: 0 0 0 0;
+      inset: 0 0 0 0; 
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     }
   }
@@ -115,7 +119,7 @@
       margin-bottom: var(--spacer-2);
     }
 
-    .as-banner & {
+    .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
       color: #fdfdfd;
@@ -130,9 +134,12 @@
     }
 
     .as-banner & {
+      order: -1;
+    }
+
+    .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
-      order: -1;
       color: #fdfdfd;
     }
   }
@@ -141,6 +148,10 @@
     max-width: 650px;
 
     .as-banner & {
+      color: var(--color-ternary);
+    }
+
+    .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
       color: #fdfdfd;
