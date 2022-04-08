@@ -1,3 +1,5 @@
+/* abril-fatface-regular - latin */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 :root {
   --spacer-1: 4px;
   --spacer-2: 8px;
@@ -62,7 +64,7 @@
   --shadow-3: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   --shadow-4: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   --border-radius: 8px;
-  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+  --font-family: 'HeliosLightC', -apple-system, "Open Sans", "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif;
 }
 
