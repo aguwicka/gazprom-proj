@@ -1,0 +1,62 @@
+.modal-link {
+  &__name {
+    border-bottom: 1px dashed transparent;
+    color: var(--color-brand);
+    cursor: pointer;
+
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+
+  &:focus-within &__inner {
+    display: flex;
+  }
+
+  &__inner {
+    position: fixed;
+    z-index: 20;
+    inset: 0 0 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__content {
+    max-width: #{'min(600px, 98vw)'};
+    max-height: 90vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: var(--spacer-8);
+    background: var(--bg-app);
+    border-radius: 10px;
+    box-shadow: var(--shadow-1), 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    animation: show-in .2s forwards;
+    pointer-events: auto;
+
+    .dark-theme & {
+      background: var(--bg-soft);
+    }
+
+    ul {
+      padding: 0;
+      margin-left: 1rem;
+
+      li + li {
+        margin-top: var(--spacer-4);
+      }
+    }
+  }
+}
+
+@keyframes show-in {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

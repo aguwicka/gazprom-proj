@@ -29,5 +29,10 @@
     color: var(--color-secondary);
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-5);
+  }
 }
   
