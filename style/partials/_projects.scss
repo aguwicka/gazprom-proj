@@ -3,10 +3,26 @@
 .projects {
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    justify-content: center;
-    align-items: start;
-    gap: var(--spacer-12) var(--spacer-6);
+
+    @media (max-width: 767px) {
+      gap: var(--container-padding-x);
+      overflow-x: auto;
+      grid-auto-flow: column;
+      margin: -30px var(--container-padding-x-negative);
+      padding: 30px var(--container-padding-x);
+      scroll-snap-type: x mandatory;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      justify-content: center;
+      align-items: start;
+      gap: var(--spacer-12) var(--spacer-6);
+    }
   }
 }
 
@@ -18,6 +34,13 @@
 
   &:hover {
     --project-card-title-color: var(--color-brand);
+  }
+
+  @media (max-width: 767px) {
+    width: clamp(250px, 80vw, 300px);
+    scroll-snap-align: start;
+    scroll-margin-left: var(--container-padding-x);
+    align-content: baseline;
   }
 
   &__image {

@@ -3,12 +3,18 @@
 .parts {
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-    gap: var(--spacer-7);
+    grid-template-columns: 100%;
+    gap: var(--spacer-3);
 
-    .has-small-cards & {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacer-5);
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+      gap: var(--spacer-7);
+
+      .has-small-cards & {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacer-5);
+      }
     }
   }
 }
@@ -42,11 +48,15 @@
     grid-area: 1/1/-1/-1;
     display: flex;
     align-items: flex-end;
-    padding: var(--spacer-9);
+    padding: var(--spacer-4);
     color: #fff;
     font-weight: 400;
     font-size: 24px;
     text-decoration: none;
+
+    @media (min-width: 768px) {
+      padding: var(--spacer-9);
+    }
 
     .has-small-cards & {
       padding: var(--spacer-4);

@@ -2,17 +2,29 @@
 
 .photos {
   &__items {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    flex-flow: row wrap;
     gap: var(--spacer-5);
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-auto-flow: column;
+    }
   }
 }
 
 .photo-card {
-  max-height: 400px;
   aspect-ratio: 1.375;
   overflow: hidden;
   border-radius: 4px;
+
+  @media (max-width: 767px) {
+    width: calc(50% - var(--spacer-5)/2);
+  }
+
+  @media (min-width: 768px) {
+    max-height: 400px;
+  }
 
   img {
     width: 100%;
@@ -20,4 +32,3 @@
     object-fit: cover;
   }
 }
-  
