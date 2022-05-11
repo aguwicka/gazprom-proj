@@ -1,0 +1,50 @@
+/* abril-fatface-regular - latin */
+// @font-face {
+//   font-family: 'HeliosLightC';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local(''),
+//        url('../assets/fonts/HeliosLightC Regular.otf') format('truetype');
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+@import "variables";
+
+@import "app";
+
+@import "base/reset";
+@import "base/mixins";
+@import "base/classes";
+@import "base/helpers";
+@import "base/animation";
+
+@import "partials/app-layouts";
+@import "partials/app-section";
+@import "partials/app-preloader";
+@import "partials/app-header";
+@import "partials/nav-menu";
+@import "partials/case";
+@import "partials/just-media";
+@import "partials/links";
+@import "partials/list";
+@import "partials/modal-link";
+@import "partials/speech";
+@import "partials/directions";
+@import "partials/parts";
+@import "partials/news";
+@import "partials/news-page";
+@import "partials/news-addons";
+@import "partials/news-list";
+@import "partials/news-single";
+@import "partials/company-parts";
+@import "partials/customers";
+@import "partials/features";
+@import "partials/projects";
+@import "partials/persons";
+@import "partials/stats";
+@import "partials/goals";
+@import "partials/photos";
+@import "partials/vacancies";
+@import "partials/app-footer";
+@import "partials/theme-switcher";

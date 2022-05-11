@@ -1,0 +1,38 @@
+@import "../variables";
+
+.features {
+  border-radius: 4px;
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-content: space-between;
+    align-items: start;
+    gap: var(--spacer-10);
+  }
+}
+
+.feature-card {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--spacer-2);
+
+  &__icon {
+    margin-bottom: var(--spacer-1);
+  }
+
+  &__title {
+    color: var(--color-primary);
+  }
+
+  &__description {
+    color: var(--color-secondary);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-5);
+  }
+}
+  

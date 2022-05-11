@@ -1,0 +1,210 @@
+// BREAKPOINTS
+$screen-mobile: 425px;
+$screen-tablet: 668px;
+$screen-desktop-s: 950px;
+$screen-desktop-m: 1400px;
+$screen-desktop-l: 1900px;
+$screen-desktop-xl: 2250px;
+$screen-desktop-xxl: 2700px;
+// end of BREAKPOINTS
+
+// COLORS
+// Background colors (default)
+$pallete-bg-default: (
+  app: #fff,
+  header-pri: #fff,
+  header-sec: #F5F7FA,
+  default: #ffffff,
+  secondary: #ecf1f4,
+  ghost: rgba(0, 32, 51, 0.08),
+  brand: #0968c0,
+  brand-light: #DFF4FF,
+  link: #0078d2,
+  stripe: rgba(0, 32, 51, 0.05),
+  border: rgba(0, 65, 102, 0.2),
+  tone: rgba(0, 32, 51, 0.85),
+  soft: #F5F7FA,
+  system: #ced8de,
+  normal: #56b9f2,
+  success: #22c38e,
+  caution: #f2c94c,
+  warning: #f38b00,
+  alert: #eb5757,
+  critical: #33000f,
+  shadow: #002033,
+  icon: #daf3f7,
+);
+// Background colors (dark theme)
+$pallete-bg-dark: (
+  app: #161a1d,
+  header-pri: #161A1D,
+  header-sec: #232A2F,
+  default: #22272b,
+  secondary: #161a1d,
+  ghost: rgba(246, 251, 253, 0.1),
+  brand: #0968c0,
+  brand-light: #DFF4FF,
+  link: #0078d2,
+  stripe: rgba(246, 251, 253, 0.06),
+  border: rgba(255, 255, 255, 0.2),
+  tone: rgba(12, 17, 19, 0.85),
+  soft: #232A2F,
+  system: #4b5963,
+  normal: #0ba5ff,
+  success: #24c38e,
+  caution: #f2c94c,
+  warning: #f38b01,
+  alert: #ff4443,
+  critical: #33000f,
+  shadow: #000000,
+);
+// Colors (default)
+$pallete-default: (
+  primary: #0e2c40,
+  secondary: rgba(0, 32, 51, 0.6),
+  ternary: #95999b,
+  ghost: rgba(0, 32, 51, 0.3),
+  brand: #0968c0,
+  link: #0078d2,
+  link-hover: #008efa,
+  link-minor: #1c5682,
+  system: #84a7bd,
+  normal: #32b4ff,
+  success: #09b37b,
+  caution: #ffa10a,
+  warning: #eb6d00,
+  alert: #eb3333,
+  critical: #33000f,
+  line: #f2f2f2,
+);
+// Colors (dark theme)
+$pallete-dark: (
+  primary: #f8f8f8,
+  secondary: rgba(255, 255, 255, 0.6),
+  ternary: #95999b,
+  ghost: rgba(255, 255, 255, 0.3),
+  brand: #0968c0,
+  link: #0f9fff,
+  link-hover: #6fa5c8,
+  link-minor: #57bcff,
+  system: #5e798d,
+  normal: #009bf5,
+  success: #10ae79,
+  caution: #f8c735,
+  warning: #e68200,
+  alert: #f73b3b,
+  critical: #62001d,
+  line: #414141,
+);
+// end of COLORS
+
+// TYPOGRAPHY
+// Typos (desktop default)
+$typos-default: (
+  h1: (
+    "font-size": 60px,
+    "font-weight": 300,
+  ),
+  h2: (
+    "font-size": 34px,
+    "font-weight": 400,
+  ),
+  subtitle1: (
+    "font-size": 20px,
+    "font-weight": 500,
+  ),
+  subtitle2: (
+    "font-size": 16px,
+    "font-weight": 500,
+  ),
+  subtitle3: (
+    "font-size": 18px,
+    "font-weight": 400,
+  ),
+  body1: (
+    "font-size": 16px,
+    "font-weight": 400,
+  ),
+  body2: (
+    "font-size": 14px,
+    "font-weight": 400,
+  ),
+  link: (
+    "font-size": 14px,
+    "font-weight": 400,
+  ),
+  secondary: (
+    "font-size": 10px,
+    "font-weight": 400,
+    "text-transform": uppercase,
+  ),
+);
+
+// Typos (mobile)
+$typos-mobile: (
+  h1: (
+    "font-size": 40px,
+    "font-weight": 400,
+  ),
+  h2: (
+    "font-size": 22px,
+    "font-weight": 400,
+  ),
+  subtitle1: (
+    "font-size": 18px,
+    "font-weight": 500,
+  ),
+  subtitle2: (
+    "font-size": 14px,
+    "font-weight": 500,
+  ),
+  subtitle3: (
+    "font-size": 16px,
+    "font-weight": 400,
+  ),
+  body1: (
+    "font-size": 14px,
+    "font-weight": 400,
+  ),
+  body2: (
+    "font-size": 13px,
+    "font-weight": 400,
+  ),
+  link: (
+    "font-size": 14px,
+    "font-weight": 400,
+  ),
+  secondary: (
+    "font-size": 8px,
+    "font-weight": 400,
+    "text-transform": uppercase,
+  ),
+);
+// end of TYPOGRAPHY
+
+// SPACERS
+// Typo/text colors (dark theme)
+$spacer-size: 4px;
+$spacers: (
+  1: $spacer-size * 1,
+  2: $spacer-size * 2,
+  3: $spacer-size * 3,
+  4: $spacer-size * 4,
+  5: $spacer-size * 5,
+  6: $spacer-size * 6,
+  7: $spacer-size * 7,
+  8: $spacer-size * 8,
+  9: $spacer-size * 9,
+  10: $spacer-size * 10,
+  11: $spacer-size * 11,
+  12: $spacer-size * 12,
+  13: $spacer-size * 13,
+  14: $spacer-size * 14,
+  15: $spacer-size * 15,
+  16: $spacer-size * 16,
+  17: $spacer-size * 17,
+  18: $spacer-size * 18,
+  19: $spacer-size * 19,
+  20: $spacer-size * 20,
+);
+// end of SPACERS

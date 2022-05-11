@@ -1,0 +1,64 @@
+.vacancies {
+  &__items {
+    gap: var(--spacer-5);
+    
+    @media (min-width: 950px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      
+    }
+
+    @media (max-width: 949px) {
+      display: flex;
+      overflow-x: auto;
+      margin: 0 var(--container-padding-x-negative);
+      padding: 0 var(--container-padding-x);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.vacancy-card {
+  padding: var(--spacer-5) var(--spacer-6);
+  border-radius: 4px;
+  background: var(--bg-soft);
+
+  @media (max-width: 949px) {
+    flex-shrink: 0;
+    min-width: 230px;
+    width: #{'max(60%, 230px)'};
+    padding: var(--spacer-4) var(--spacer-3);
+  }
+
+  &__name {
+    display: inline-flex;
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-brand);
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-2);
+    margin-top: var(--spacer-3);
+    color: var(--color-secondary);
+
+    &::before {
+      content: "";
+      width: 15px;
+      height: 14px;
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='14' viewBox='0 0 15 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.80203 13.7193C7.76441 13.7193 7.72634 13.7057 7.69616 13.6782C7.49753 13.4979 2.83203 9.21086 2.83203 5.2493C2.83203 2.5088 5.06153 0.279297 7.80203 0.279297C10.5425 0.279297 12.772 2.5088 12.772 5.2493C12.772 8.77423 8.11178 13.4747 7.91316 13.6734C7.88297 13.7035 7.84228 13.7193 7.80203 13.7193ZM7.80203 0.594297C5.23522 0.594297 3.14703 2.68248 3.14703 5.2493C3.14703 8.74055 7.08103 12.6575 7.79722 13.3409C8.50247 12.6076 12.457 8.35686 12.457 5.2493C12.457 2.68248 10.3688 0.594297 7.80203 0.594297ZM7.80203 7.1568C6.75028 7.1568 5.89453 6.30105 5.89453 5.2493C5.89453 4.19755 6.75028 3.3418 7.80203 3.3418C8.85378 3.3418 9.70953 4.19755 9.70953 5.2493C9.70953 6.30105 8.85378 7.1568 7.80203 7.1568ZM7.80203 3.6568C6.92397 3.6568 6.20953 4.37123 6.20953 5.2493C6.20953 6.12736 6.92397 6.8418 7.80203 6.8418C8.68009 6.8418 9.39453 6.12736 9.39453 5.2493C9.39453 4.37123 8.68009 3.6568 7.80203 3.6568Z' fill='%230E2C40'/%3E%3C/svg%3E%0A");
+
+      .dark-theme & {
+        filter: invert(1);
+      }
+    }
+  }
+}

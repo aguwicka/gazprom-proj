@@ -1,0 +1,25 @@
+.news-page {
+  grid-template-areas: 'title side' 'content side';
+  grid-template-rows: auto minmax(0, 1fr);
+  padding-bottom: var(--spacer-20);
+
+  &__header {
+    grid-area: title;
+  }
+
+  &__aside {
+    grid-area: side;
+    align-self: start;
+    margin-top: var(--spacer-20);
+
+    @media (min-height: 800px) {
+      position: sticky;
+      top: 120px;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+  }
+
+}

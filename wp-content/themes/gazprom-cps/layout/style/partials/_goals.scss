@@ -1,0 +1,21 @@
+@import "../variables";
+
+.goals {
+}
+
+.goal-card {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  gap: var(--spacer-1);
+  text-align: center;
+
+  &__icon {
+    margin-bottom: var(--spacer-1);
+    color: var(--color-brand);
+  }
+
+  &__description {
+    width: #{'max(60%, 280px)'};
+  }
+}

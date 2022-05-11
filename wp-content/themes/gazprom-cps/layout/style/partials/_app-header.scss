@@ -1,0 +1,218 @@
+@import "../variables";
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  transition: transform 0.2s ease-in;
+
+  .container {
+    height: 100%;
+  }
+
+  &__sec {
+    background-color: var(--bg-header-sec);
+    transition: background-color 0.2s linear;
+  }
+
+  &__sec-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1px, 1fr));
+    align-items: center;
+    gap: 0 var(--spacer-2);
+    height: 100%;
+    padding-top: var(--spacer-2);
+    padding-bottom: var(--spacer-2);
+  }
+
+  &__sec-nav {
+    display: flex;
+    flex-flow: column;
+
+    @media (min-width: 950px) {
+      flex-flow: row;
+      gap: clamp(var(--spacer-2), 3vw, var(--spacer-14));
+      justify-content: flex-end;
+    }
+  }
+
+  &__sec-nav-link {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    @media (max-width: 949px) {
+      font-size: 22px;
+      line-height: 160%;
+    }
+
+    @media (min-width: 950px) {
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      font-size: 10px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    gap: var(--spacer-6);
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacer-5);
+  }
+
+  &__pri {
+    background-color: var(--bg-header-pri);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s linear;
+  }
+
+  &__pri-content {
+    display: grid;
+    grid-template-columns: minmax(1px, 1fr) minmax(1px, 2fr);
+    gap: 0 var(--spacer-2);
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-top: var(--spacer-2);
+    padding-bottom: var(--spacer-2);
+  }
+
+  &__pri-nav {
+    display: flex;
+
+    @media (min-width: 950px) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__pri-nav-link {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    @media (max-width: 949px) {
+      font-size: 22px;
+      line-height: 160%;
+    }
+
+    @media (min-width: 950px) {
+      color: var(--color-secondary);
+
+      &:hover {
+        color: var(--color-brand);
+      }
+    }
+  }
+
+  &__logo {
+    transform: translateY(-6px);
+
+    @media (max-width: 949px) {
+      display: none;
+    }
+  }
+
+  // Логика моб меню
+  @media (max-width: 949px) {
+    height: 65px;
+    background: var(--bg-app);
+  }
+
+  &__mobile-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacer-3) var(--spacer-6);
+    background: var(--bg-app);
+
+    @media (min-width: 950px) {
+      display: none;
+    }
+  }
+
+  &__mobile-trigger {
+    cursor: pointer;
+  }
+
+  &__mobile-logo {
+    img {
+      max-height: 45px;
+      transform: translateY(-5px);
+    }
+  }
+
+  &__inner {
+    @media (max-width: 949px) {
+      position: fixed;
+      z-index: -1;
+      inset: 0 0 0 0;
+      display: none;
+      gap: var(--spacer-8);
+      padding: var(--spacer-8);
+      padding-top: calc(65px + var(--spacer-2));
+      background: var(--bg-app);
+      overflow-y: auto;
+
+      .has-opened-mobile-menu & {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "pri pri" "sec sec" "social options";
+        justify-items: start;
+      }
+    }
+  }
+
+  @media (max-width: 949px) {
+    &__pri-nav {
+      grid-area: pri;
+    }
+
+    &__sec-nav {
+      grid-area: sec;
+    }
+
+    &__social {
+      grid-area: social;
+      justify-self: start;
+    }
+
+    &__options {
+      position: sticky;
+      bottom: 0;
+      grid-area: options;
+      justify-self: end;
+    }
+  }
+
+  &__pri,
+  &__pri-content,
+  &__sec,
+  &__sec-content,
+  .container {
+    @media (max-width: 949px) {
+      display: contents;
+    }
+  }
+}
+
+// JS: При прокрутке меняем состояние
+.app-header {
+  &.nav-down {
+    transform: none;
+  }
+
+  &.nav-up {
+    transform: translateY(-100%);
+  }
+}

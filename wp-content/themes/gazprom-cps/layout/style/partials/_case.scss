@@ -1,0 +1,11 @@
+@import "../variables";
+
+.case {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacer-1) var(--spacer-3);
+  gap: var(--spacer-2);
+  border-radius: 20px;
+  background: var(--bg-brand-light);
+  color: var(--color-brand);
+}

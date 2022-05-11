@@ -1,0 +1,47 @@
+@import "../variables";
+
+.contacts {
+    position: relative;
+
+    .container {
+        position: relative;
+        height: 100%;
+        z-index: 11;
+    }
+
+    &__map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            @media (max-width: $screen-desktop-s) {
+                object-fit: cover;
+            }
+
+            .dark-theme & {
+                position: relative;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column;
+    }
+
+    &__info {
+        margin-top: auto;
+
+        & > * {
+            margin-bottom: var(--spacer-6);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import "../variables";
+
+.stages {
+    position: relative;
+
+    &__inner {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        padding: 0 10px;
+        z-index: 2;
+
+        @media (min-width: $screen-desktop-s) {
+            padding: 0 clamp(10px, 8vw, 200px);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-flow: column;
+
+        @media (min-width: $screen-desktop-s) {
+            width: 50%;
+        }
+
+        &:nth-child(odd) {
+            padding-right: var(--spacer-2);
+        }
+
+        &:nth-child(even) {
+            --state-image-align: flex-end;
+            align-self: flex-end;
+            padding-left: var(--spacer-2);
+        }
+    }
+
+    &__item + &__item {
+        @media (min-width: $screen-desktop-s) {
+            margin-top: calc(-1 * var(--spacer-10));
+        }
+    }
+
+    &__image {
+        position: relative;
+        align-self: var(--state-image-align, initial);
+
+        @media (min-width: $screen-desktop-s) {
+            margin-bottom: var(--stage-image-offset, 0);
+        }
+    }
+
+    &__pretitle {
+        margin-top: var(--spacer-1);
+        margin-bottom: var(--spacer-1); 
+    }
+
+    &__title {
+        margin-bottom: var(--spacer-1);
+    }
+}

@@ -1,0 +1,47 @@
+@import "../variables";
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.is-full-height {
+    @media (min-width: $screen-tablet) {
+        height: clamp(500px, 90vh, 600px);
+
+        @media (min-height: 700px) {
+            height: clamp(500px, 90vh, 680px);
+        }
+    }
+}
+
+.hide-on-mobile {
+    @media (max-width: $screen-tablet) {
+        display: none;
+    }
+}
+
+.hide-on-tablet {
+    @media (min-width: $screen-tablet) {
+        display: none;
+    }
+}
+
+.has-overflow-hidden {
+    overflow: hidden;
+}

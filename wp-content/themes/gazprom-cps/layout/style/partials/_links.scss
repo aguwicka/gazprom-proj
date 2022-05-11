@@ -1,0 +1,32 @@
+@import "../variables";
+
+.link {
+  color: var(--color-brand);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.as-action {
+    display: inline-flex;
+    border-bottom: 1px dashed transparent;
+
+    &:hover {
+      border-bottom: 1px dashed currentColor;
+      text-decoration: none;
+    }
+  }
+
+  &.as-text {
+    color: var(--color-primary);
+  }
+
+  &.like-button {
+    display: inline-flex;
+    padding: var(--spacer-2) var(--spacer-3);
+    background-color: var(--bg-brand);
+    border-radius: 4px;
+    color: #FDFDFD;
+  }
+}

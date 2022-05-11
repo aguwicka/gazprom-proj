@@ -1,0 +1,43 @@
+@import "../variables";
+
+// *** Class generator for `background-color` property
+// *** Deactivated
+// @each $color, $colorCode in $pallete-bg-default {
+//     .background--#{$color} {
+//         background-color: var(--color-bg-+$color);
+//     }
+// }
+
+// Class generator for `color` property
+@each $color, $colorCode in $pallete-default {
+  .color--#{$color} {
+    color: var(--color- + $color);
+  }
+}
+
+// Class generator for `background` property
+@each $color, $colorCode in $pallete-bg-default {
+  .bg--#{$color} {
+    background-color: var(--bg- + $color);
+  }
+}
+
+// Class generator for typography (mobile)
+@each $typo, $typoStyle in $typos-mobile {
+  .typo--#{$typo} {
+    @each $prop, $propValue in $typoStyle {
+      #{$prop}: $propValue;
+    }
+  }
+}
+
+// Class generator for typography (desktop default)
+@media (min-width: $screen-desktop-s) {
+  @each $typo, $typoStyle in $typos-default {
+    :is(.typo--#{$typo}, #app) {
+      @each $prop, $propValue in $typoStyle {
+        #{$prop}: $propValue;
+      }
+    }
+  }
+}
