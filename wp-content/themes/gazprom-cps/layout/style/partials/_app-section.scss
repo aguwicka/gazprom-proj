@@ -30,20 +30,21 @@
     padding-top: 0;
   }
 
-  &.as-banner.has-no-bg {
+  &.as-banner {
     padding-bottom: 0;
   }
 
   &.as-banner:not(.has-no-bg) {
     position: relative;
-    height: 350px;
-    padding: var(--spacer-16) 0;
+    height: 600px;
+    padding: var(--spacer-30) 0;
+    padding-bottom: var(--spacer-20);
     background-image: var(--app-section-bg, none);
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (max-width: 949px) {
-      height: clamp(250px, 20vw, 350px);
+      // height: clamp(250px, 20vw, 350px);
       padding: clamp(var(--spacer-10), 5vw, var(--spacer-16)) 0;
     }
 
