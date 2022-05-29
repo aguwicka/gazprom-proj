@@ -1,0 +1,21 @@
+@import "../variables";
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacer-2);
+  background: var(--color-brand);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--bg-default);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
