@@ -44,7 +44,7 @@
     background-size: cover;
 
     @media (max-width: 949px) {
-      // height: clamp(250px, 20vw, 350px);
+      height: clamp(250px, 20vw, 350px);
       padding: clamp(var(--spacer-10), 5vw, var(--spacer-16)) 0;
     }
 

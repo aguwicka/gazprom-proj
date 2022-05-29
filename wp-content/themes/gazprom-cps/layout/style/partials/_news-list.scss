@@ -1,3 +1,5 @@
+@import "../variables";
+
 .news-list {
   &__filter {
     margin-bottom: var(--spacer-7);
@@ -7,9 +9,6 @@
     & > * {
       margin-bottom: var(--spacer-10);
     }
-  }
-
-  &__pagination {
   }
 }
 
