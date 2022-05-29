@@ -1251,9 +1251,34 @@ img {
 
 .app-modal__close {
   position: absolute;
-  top: var(--spacer-4);
-  right: var(--spacer-4);
+  top: var(--spacer-2);
+  right: var(--spacer-2);
   cursor: pointer;
+}
+
+@media (max-width: 639px) {
+  .app-modal__close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-default);
+  }
+}
+
+@media (min-width: 640px) {
+  .app-modal__close {
+    top: var(--spacer-4);
+    right: var(--spacer-4);
+  }
 }
 
 .app-modal__close:hover {
@@ -1263,10 +1288,15 @@ img {
 
 .app-modal__inner {
   position: relative;
-  margin: var(--spacer-3);
   border-radius: 8px;
   background: var(--bg-default);
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .app-modal__inner {
+    margin: var(--spacer-3);
+  }
 }
 
 .app-textfield {
@@ -1338,6 +1368,14 @@ img {
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   gap: var(--spacer-5);
+  background: var(--bg-default);
+}
+
+@media (max-width: 639px) {
+  .app-form__body {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    margin-top: calc(var(--spacer-4) * -1);
+  }
 }
 
 .app-form__inner {
@@ -1347,6 +1385,14 @@ img {
       grid-template-columns: 100%;
   gap: var(--spacer-5);
   padding: var(--spacer-8) var(--spacer-12);
+}
+
+@media (max-width: 639px) {
+  .app-form__inner {
+    max-height: 100%;
+    overflow: auto;
+    padding: var(--spacer-6);
+  }
 }
 
 .app-form__image img {
@@ -1378,9 +1424,24 @@ img {
 .app-form[data-form="feedback"] {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
+}
+
+@media (max-width: 639px) {
+  .app-form[data-form="feedback"] {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: clamp(75px, 30vh, 200px) minmax(0, 1fr);
+        grid-template-rows: clamp(75px, 30vh, 200px) minmax(0, 1fr);
+    height: min(812px, 100vh);
+  }
+}
+
+@media (min-width: 640px) {
+  .app-form[data-form="feedback"] {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+  }
 }
 
 .nav-menu {
