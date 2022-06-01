@@ -36,12 +36,19 @@
 
   &.as-banner:not(.has-no-bg) {
     position: relative;
-    height: 600px;
     padding: var(--spacer-30) 0;
     padding-bottom: var(--spacer-20);
     background-image: var(--app-section-bg, none);
     background-repeat: no-repeat;
     background-size: cover;
+
+    .slider-main & {
+      min-height: clamp(450px, 33vw, 600px);
+
+      @media (min-width: 950px) {
+        height: 600px;
+      }
+    }
 
     @media (max-width: 949px) {
       height: clamp(250px, 20vw, 350px);

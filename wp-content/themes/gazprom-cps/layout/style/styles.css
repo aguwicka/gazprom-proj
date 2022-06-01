@@ -735,12 +735,21 @@ img {
 
 .app-section.as-banner:not(.has-no-bg) {
   position: relative;
-  height: 600px;
   padding: var(--spacer-30) 0;
   padding-bottom: var(--spacer-20);
   background-image: var(--app-section-bg, none);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.slider-main .app-section.as-banner:not(.has-no-bg) {
+  min-height: clamp(450px, 33vw, 600px);
+}
+
+@media (min-width: 950px) {
+  .slider-main .app-section.as-banner:not(.has-no-bg) {
+    height: 600px;
+  }
 }
 
 @media (max-width: 949px) {
