@@ -2519,7 +2519,7 @@ img {
   max-height: 100%;
 }
 
-.slider-main__pager {
+.slider-main__nav {
   position: relative;
   z-index: 2;
   display: -webkit-box;
@@ -2528,8 +2528,18 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: var(--spacer-3);
+  gap: var(--spacer-20);
   margin-top: auto;
+}
+
+.slider-main__pager {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: var(--spacer-3);
 }
 
 .slider-main__pager-item {
@@ -2547,26 +2557,92 @@ img {
   border-radius: 50%;
   border: 1px solid var(--bg-default);
   color: var(--bg-default);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .slider-main__pager-item:hover {
-  opacity: .75;
+  opacity: 0.75;
   cursor: pointer;
 }
 
 .slider-main__pager-item.for-prev {
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .slider-main__pager-item.for-prev:hover {
-  opacity: .75;
+  opacity: 0.75;
   cursor: pointer;
 }
 
 .slider-main__pager-text {
-  opacity: .75;
+  opacity: 0.75;
   color: var(--bg-default);
+}
+
+.slider-main__links {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 949px) {
+  .slider-main__links {
+    display: none;
+  }
+}
+
+.slider-main__links-item {
+  max-width: 220px;
+}
+
+.slider-main__links-progress {
+  position: relative;
+  width: 74px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-line);
+  opacity: .7;
+  overflow: hidden;
+}
+
+.slider-main__links-progress::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: var(--color-brand);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0s linear;
+  transition: -webkit-transform 0s linear;
+  transition: transform 0s linear;
+  transition: transform 0s linear, -webkit-transform 0s linear;
+}
+
+.slider-main__links-progress.filled::after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.page-loaded .slick-current .slider-main__links-progress.current::after {
+  -webkit-transition-duration: 5s;
+          transition-duration: 5s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.slider-main__links-link {
+  display: inline-block;
+  margin-top: var(--spacer-1);
+  color: var(--color-line);
+  text-decoration: none;
 }
 
 .slider-main .app-section .container {
