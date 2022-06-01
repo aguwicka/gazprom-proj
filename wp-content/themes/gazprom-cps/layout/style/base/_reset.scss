@@ -33,3 +33,13 @@ img {
 :where(p, figure) {
   margin: 0;
 }
+
+:where(details) {
+  & > summary {
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

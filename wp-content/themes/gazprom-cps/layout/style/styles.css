@@ -60,7 +60,7 @@
   --color-warning: #eb6d00;
   --color-alert: #eb3333;
   --color-critical: #33000f;
-  --color-line: #f2f2f2;
+  --color-line: #E7EBF0;
   --shadow-1: 0px 10px 50px rgba(0, 0, 0, 0.2);
   --shadow-2: 0px 4px 20px rgba(85, 94, 112, 0.1);
   --shadow-3: 0 0 5px 2px rgba(0, 0, 0, 0.2);
@@ -209,6 +209,14 @@ img {
 
 :where(p, figure) {
   margin: 0;
+}
+
+:where(details) > summary {
+  list-style: none;
+}
+
+:where(details) > summary::-webkit-details-marker {
+  display: none;
 }
 
 .color--primary {
@@ -1450,6 +1458,149 @@ img {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     max-width: 1000px;
+  }
+}
+
+.app-collapse {
+  background: var(--bg-soft);
+}
+
+.app-collapse__summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacer-4);
+  padding: var(--spacer-3);
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .app-collapse__summary {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: var(--spacer-5) var(--spacer-8);
+  }
+}
+
+.app-collapse__header {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto minmax(0, 1fr) auto;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas: "icon title count" ". descr descr";
+  gap: var(--spacer-2);
+  color: var(--color-primary);
+}
+
+@media (min-width: 640px) {
+  .app-collapse__header {
+        grid-template-areas: "icon title count" "icon descr count";
+    gap: var(--spacer-2) var(--spacer-10);
+  }
+}
+
+.app-collapse__icon {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: icon;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app-collapse__icon > * {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 639px) {
+  .app-collapse__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.app-collapse__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.app-collapse__description {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: descr;
+  color: var(--color-secondary);
+}
+
+.app-collapse__counter {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: count;
+  color: var(--color-brand);
+}
+
+@media (min-width: 640px) {
+  .app-collapse__counter {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.app-collapse__arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .app-collapse__arrow {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.app-collapse__arrow > * {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 639px) {
+  .app-collapse__arrow {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.app-collapse__arrow > * {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+[open] > summary .app-collapse__arrow > * {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.app-collapse__content {
+  margin-top: var(--spacer-3);
+  padding: var(--spacer-3);
+  padding-top: 0;
+}
+
+@media (min-width: 640px) {
+  .app-collapse__content {
+    padding: var(--spacer-5) var(--spacer-8);
+    padding-top: 0;
   }
 }
 
@@ -2826,8 +2977,8 @@ img {
   margin-top: var(--spacer-6);
 }
 
-.features {
-  border-radius: 4px;
+.features__group + .features__group {
+  margin-top: var(--spacer-3);
 }
 
 .features__items {
@@ -2841,7 +2992,7 @@ img {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  gap: var(--spacer-10);
+  gap: var(--spacer-5);
 }
 
 .feature-card {
@@ -2850,10 +3001,8 @@ img {
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   gap: var(--spacer-2);
-}
-
-.feature-card__icon {
-  margin-bottom: var(--spacer-1);
+  padding: var(--spacer-5);
+  border: 1px solid var(--color-line);
 }
 
 .feature-card__title {
