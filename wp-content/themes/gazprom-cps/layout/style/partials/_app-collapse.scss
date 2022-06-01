@@ -1,6 +1,6 @@
 @import "../variables";
 
-.app-collapse {
+:where(.app-collapse) {
   background: var(--bg-soft);
 
   &__summary {

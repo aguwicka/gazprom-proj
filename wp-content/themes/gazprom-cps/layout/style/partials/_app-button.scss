@@ -1,6 +1,6 @@
 @import "../variables";
 
-.app-btn {
+:where(.app-btn) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@
   text-align: center;
   color: var(--bg-default);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 140%;
   cursor: pointer;
 
