@@ -2267,6 +2267,7 @@ img {
   max-height: 174px;
   border-radius: 4px;
   aspect-ratio: 1;
+  color: var(--direction-card-color-title, --color-primary);
   overflow: hidden;
 }
 
