@@ -2245,8 +2245,8 @@ img {
 
 @media (min-width: 950px) {
   .direction-card {
-    -ms-grid-columns: 170px minmax(1px, 1fr);
-        grid-template-columns: 170px minmax(1px, 1fr);
+    -ms-grid-columns: minmax(auto, 170px) minmax(1px, 1fr);
+        grid-template-columns: minmax(auto, 170px) minmax(1px, 1fr);
     -ms-grid-rows: auto auto minmax(1px, 1fr);
         grid-template-rows: auto auto minmax(1px, 1fr);
         grid-template-areas: "image pretitle" "image title" "image description";
@@ -2263,9 +2263,10 @@ img {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: image;
-  width: 174px;
-  height: 174px;
+  max-width: 174px;
+  max-height: 174px;
   border-radius: 4px;
+  aspect-ratio: 1;
   overflow: hidden;
 }
 

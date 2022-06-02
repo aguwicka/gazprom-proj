@@ -55,7 +55,7 @@
   }
 
   @media (min-width: 950px) {
-    grid-template-columns: 170px minmax(1px, 1fr);
+    grid-template-columns: minmax(auto, 170px) minmax(1px, 1fr);
     grid-template-rows: auto auto minmax(1px, 1fr);
     grid-template-areas:
       "image pretitle"
@@ -70,9 +70,10 @@
 
   &__image {
     grid-area: image;
-    width: 174px;
-    height: 174px;
+    max-width: 174px;
+    max-height: 174px;
     border-radius: 4px;
+    aspect-ratio: 1;
     overflow: hidden;
 
     @media (max-width: 767px) {
