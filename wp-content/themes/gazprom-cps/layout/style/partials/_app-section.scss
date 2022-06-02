@@ -134,7 +134,7 @@
     .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
-      color: #fdfdfd;
+      color: var(--color-line);
     }
   }
 
@@ -167,6 +167,10 @@
       position: relative;
       z-index: 1;
       color: #fdfdfd;
+
+      &:not(:last-child) {
+        margin-bottom: var(--spacer-4);
+      }
     }
   }
 }
