@@ -55,7 +55,7 @@
   }
 
   @media (min-width: 950px) {
-    grid-template-columns: minmax(auto, 170px) minmax(1px, 1fr);
+    grid-template-columns: auto minmax(1px, 1fr);
     grid-template-rows: auto auto minmax(1px, 1fr);
     grid-template-areas:
       "image pretitle"

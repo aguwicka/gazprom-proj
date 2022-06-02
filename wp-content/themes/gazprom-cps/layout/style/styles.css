@@ -2245,8 +2245,8 @@ img {
 
 @media (min-width: 950px) {
   .direction-card {
-    -ms-grid-columns: minmax(auto, 170px) minmax(1px, 1fr);
-        grid-template-columns: minmax(auto, 170px) minmax(1px, 1fr);
+    -ms-grid-columns: auto minmax(1px, 1fr);
+        grid-template-columns: auto minmax(1px, 1fr);
     -ms-grid-rows: auto auto minmax(1px, 1fr);
         grid-template-rows: auto auto minmax(1px, 1fr);
         grid-template-areas: "image pretitle" "image title" "image description";
