@@ -131,6 +131,16 @@
   overflow: hidden;
 }
 
+.app ::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: var(--bg-default);
+}
+
+.app ::-webkit-scrollbar-thumb {
+  background: var(--color-system);
+}
+
 .app-inner {
   position: relative;
   display: -webkit-box;
@@ -1958,11 +1968,13 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   pointer-events: none;
+  color: var(--color-primary);
 }
 
 .modal-link__content {
-  max-width: min(600px, 98vw);
-  max-height: 90vh;
+  max-width: min(900px, 98vw);
+  max-height: 95vh;
+  margin: var(--spacer-1);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: var(--spacer-8);
@@ -1970,8 +1982,8 @@ img {
   border-radius: 10px;
   -webkit-box-shadow: var(--shadow-1), 0 0 0 100vmax rgba(0, 0, 0, 0.5);
           box-shadow: var(--shadow-1), 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  -webkit-animation: show-in .2s forwards;
-          animation: show-in .2s forwards;
+  -webkit-animation: show-in 0.2s forwards;
+          animation: show-in 0.2s forwards;
   pointer-events: auto;
 }
 
@@ -3357,6 +3369,7 @@ img {
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  justify-items: start;
   gap: var(--spacer-1);
   text-decoration: none;
 }

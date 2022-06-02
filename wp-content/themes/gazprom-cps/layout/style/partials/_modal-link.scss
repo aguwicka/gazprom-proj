@@ -21,18 +21,20 @@
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    color: var(--color-primary);
   }
 
   &__content {
-    max-width: #{'min(600px, 98vw)'};
-    max-height: 90vh;
+    max-width: #{"min(900px, 98vw)"};
+    max-height: 95vh;
+    margin: var(--spacer-1);
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: var(--spacer-8);
     background: var(--bg-app);
     border-radius: 10px;
     box-shadow: var(--shadow-1), 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    animation: show-in .2s forwards;
+    animation: show-in 0.2s forwards;
     pointer-events: auto;
 
     .dark-theme & {
@@ -53,7 +55,7 @@
 @keyframes show-in {
   from {
     opacity: 0;
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
