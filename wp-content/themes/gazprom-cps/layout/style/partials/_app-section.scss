@@ -36,8 +36,7 @@
 
   &.as-banner:not(.has-no-bg) {
     position: relative;
-    padding: var(--spacer-30) 0;
-    padding-bottom: var(--spacer-20);
+    padding: var(--spacer-20) 0;
     background-image: var(--app-section-bg, none);
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,6 +166,7 @@
       position: relative;
       z-index: 1;
       color: #fdfdfd;
+      opacity: .8;
 
       &:not(:last-child) {
         margin-bottom: var(--spacer-4);

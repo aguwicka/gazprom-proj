@@ -764,8 +764,7 @@ img {
 
 .app-section.as-banner:not(.has-no-bg) {
   position: relative;
-  padding: var(--spacer-30) 0;
-  padding-bottom: var(--spacer-20);
+  padding: var(--spacer-20) 0;
   background-image: var(--app-section-bg, none);
   background-repeat: no-repeat;
   background-size: cover;
@@ -912,6 +911,7 @@ img {
   position: relative;
   z-index: 1;
   color: #fdfdfd;
+  opacity: .8;
 }
 
 .as-banner:not(.has-no-bg) .app-section__description:not(:last-child) {
@@ -3464,6 +3464,30 @@ img {
 
 .stat-card__description:empty {
   display: none;
+}
+
+.faq {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  gap: var(--spacer-15);
+}
+
+.faq__item {
+  max-width: 772px;
+}
+
+.faq__q {
+  line-height: 160%;
+  font-weight: 400;
+}
+
+.faq__a {
+  margin-top: var(--spacer-3);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
 }
 
 .goal-card {
