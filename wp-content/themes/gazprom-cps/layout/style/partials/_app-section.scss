@@ -40,6 +40,7 @@
     background-image: var(--app-section-bg, none);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     .slider-main & {
       min-height: clamp(450px, 33vw, 600px);
@@ -133,7 +134,7 @@
     .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
-      color: var(--color-line);
+      color: #E7EBF0;
     }
   }
 

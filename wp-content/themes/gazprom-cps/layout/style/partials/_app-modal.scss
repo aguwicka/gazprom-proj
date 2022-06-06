@@ -1,6 +1,6 @@
 @import "../variables";
 
-:where(.app-modal) {
+.app-modal {
   position: fixed;
   inset: 0;
   z-index: 10;

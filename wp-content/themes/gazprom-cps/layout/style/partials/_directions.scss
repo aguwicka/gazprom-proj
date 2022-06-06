@@ -106,9 +106,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    overflow: hidden;
-    padding-right: var(--spacer-6);
+    padding-right: var(--spacer-10);
     color: var(--color-secondary);
+    overflow: hidden;
   }
 
   &__arrow {

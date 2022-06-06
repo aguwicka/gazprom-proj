@@ -73,6 +73,12 @@
       width: 100vw;
       height: 95px;
       padding: 50px 0 25px 0;
+
+      :nth-last-child(1) > &,
+      :nth-last-child(2) > & {
+        left: auto;
+        justify-content: flex-end;
+      }
     }
 
     &__sub-menu-name:hover > .app-header__pri-nav-link {

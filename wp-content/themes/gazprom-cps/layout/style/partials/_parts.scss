@@ -25,6 +25,10 @@
   grid-template-rows: 100%;
   max-height: var(--part-card-height, 287px);
 
+  @media (max-width: 768px) {
+    --part-card-height: 200px;
+  }
+
   &__image {
     grid-area: 1/1/-1/-1;
 
