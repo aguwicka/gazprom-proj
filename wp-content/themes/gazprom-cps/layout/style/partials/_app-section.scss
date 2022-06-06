@@ -140,6 +140,8 @@
 
   &__pretitle {
     color: var(--color-ternary);
+    font-family: 'HeliosC';
+    opacity: .8;
 
     &:not(:only-child) {
       margin-bottom: var(--spacer-2);
@@ -152,7 +154,7 @@
     .as-banner:not(.has-no-bg) & {
       position: relative;
       z-index: 1;
-      color: #fdfdfd;
+      color: var(--color-ternary);
     }
   }
 

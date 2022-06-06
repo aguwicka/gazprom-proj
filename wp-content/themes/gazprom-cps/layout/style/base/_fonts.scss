@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "HeliosC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosC.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosC-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: normal;
+  font-weight: bold;
+  src: local(""), url("/assets/fonts/HeliosC-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: italic;
+  font-weight: bold;
+  src: local(""),
+    url("/assets/fonts/HeliosC-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosLightC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosLightC.woff2") format("woff2"),
+    url("/assets/fonts/HeliosLightC.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosLightC-Italic.woff2") format("woff2"),
+    url("/assets/fonts/HeliosLightC-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosExtLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("/assets/fonts/HeliosExtLightC-Italic.woff2") format("woff2"),
+    url("/assets/fonts/HeliosExtLightC-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosCondLightC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosCondLightC.woff2") format("woff2"),
+    url("/assets/fonts/HeliosCondLightC.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosCondLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("/assets/fonts/HeliosCondLightC-Italic.woff2") format("woff2"),
+    url("/assets/fonts/HeliosCondLightC-Italic.woff") format("woff");
+}

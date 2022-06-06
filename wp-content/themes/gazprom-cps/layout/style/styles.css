@@ -1,5 +1,66 @@
-/* abril-fatface-regular - latin */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+@font-face {
+  font-family: "HeliosC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosC.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosC-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: normal;
+  font-weight: bold;
+  src: local(""), url("/assets/fonts/HeliosC-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosC";
+  font-style: italic;
+  font-weight: bold;
+  src: local(""), url("/assets/fonts/HeliosC-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HeliosLightC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosLightC.woff2") format("woff2"), url("/assets/fonts/HeliosLightC.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosLightC-Italic.woff2") format("woff2"), url("/assets/fonts/HeliosLightC-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosExtLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosExtLightC-Italic.woff2") format("woff2"), url("/assets/fonts/HeliosExtLightC-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosCondLightC";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosCondLightC.woff2") format("woff2"), url("/assets/fonts/HeliosCondLightC.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HeliosCondLightC";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/HeliosCondLightC-Italic.woff2") format("woff2"), url("/assets/fonts/HeliosCondLightC-Italic.woff") format("woff");
+}
+
 :root {
   --spacer-1: 4px;
   --spacer-2: 8px;
@@ -67,8 +128,7 @@
   --shadow-3: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   --shadow-4: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   --border-radius: 8px;
-  --font-family: 'HeliosLightC', -apple-system, "Open Sans", "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif;
+  --font-family: 'HeliosLightC';
 }
 
 :root.dark-theme {
@@ -446,22 +506,27 @@ img {
   :is(.typo--h1, #app) {
     font-size: 60px;
     font-weight: 300;
+    font-family: "HeliosLightC";
   }
   :is(.typo--h2, #app) {
     font-size: 34px;
     font-weight: 400;
+    font-family: "HeliosLightC";
   }
   :is(.typo--subtitle1, #app) {
     font-size: 20px;
     font-weight: 500;
+    font-family: "HeliosC";
   }
   :is(.typo--subtitle2, #app) {
     font-size: 16px;
     font-weight: 500;
+    font-family: "HeliosC";
   }
   :is(.typo--subtitle3, #app) {
     font-size: 18px;
     font-weight: 400;
+    font-family: "HeliosC";
   }
   :is(.typo--body1, #app) {
     font-size: 16px;
@@ -886,6 +951,8 @@ img {
 
 .app-section__pretitle {
   color: var(--color-ternary);
+  font-family: 'HeliosC';
+  opacity: .8;
 }
 
 .app-section__pretitle:not(:only-child) {
@@ -901,7 +968,7 @@ img {
 .as-banner:not(.has-no-bg) .app-section__pretitle {
   position: relative;
   z-index: 1;
-  color: #fdfdfd;
+  color: var(--color-ternary);
 }
 
 .app-section__description {
@@ -1066,6 +1133,7 @@ img {
 .app-header__sec-nav-link {
   color: var(--color-primary);
   text-decoration: none;
+  font-family: 'HeliosC';
 }
 
 @media (max-width: 949px) {
