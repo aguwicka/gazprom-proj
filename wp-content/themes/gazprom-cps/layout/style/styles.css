@@ -1123,7 +1123,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-flow: row;
             flex-flow: row;
-    gap: clamp(var(--spacer-2), 3vw, var(--spacer-14));
+    gap: clamp(var(--spacer-2), 2.5vw, var(--spacer-12));
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -1855,7 +1855,7 @@ img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: clamp(var(--spacer-2), 4vw, var(--spacer-16));
+    gap: clamp(var(--spacer-2), 3.5vw, var(--spacer-12));
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;

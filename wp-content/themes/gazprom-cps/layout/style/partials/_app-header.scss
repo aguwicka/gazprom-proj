@@ -33,7 +33,7 @@
 
     @media (min-width: 950px) {
       flex-flow: row;
-      gap: clamp(var(--spacer-2), 3vw, var(--spacer-14));
+      gap: clamp(var(--spacer-2), 2.5vw, var(--spacer-12));
       justify-content: flex-end;
     }
   }

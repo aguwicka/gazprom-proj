@@ -33,7 +33,7 @@
 @media (min-width: 950px) {
   .nav-menu {
     display: flex;
-    gap: clamp(var(--spacer-2), 4vw, var(--spacer-16));
+    gap: clamp(var(--spacer-2), 3.5vw, var(--spacer-12));
     justify-content: flex-end;
 
     .app-header__pri-nav-link {
