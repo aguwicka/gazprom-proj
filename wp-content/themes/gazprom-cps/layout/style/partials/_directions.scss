@@ -69,6 +69,7 @@
   }
 
   &__image {
+    justify-self: start;
     grid-area: image;
     max-width: 174px;
     max-height: 174px;
@@ -77,8 +78,8 @@
     color: var(--direction-card-color-title, --color-primary);
     overflow: hidden;
 
-    @media (max-width: 767px) {
-      width: 100%;
+    .dark-theme & {
+      filter: contrast(0.5);
     }
 
     img {

@@ -2339,6 +2339,7 @@ img {
 }
 
 .direction-card__image {
+      justify-self: start;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -2351,10 +2352,9 @@ img {
   overflow: hidden;
 }
 
-@media (max-width: 767px) {
-  .direction-card__image {
-    width: 100%;
-  }
+.dark-theme .direction-card__image {
+  -webkit-filter: contrast(0.5);
+          filter: contrast(0.5);
 }
 
 .direction-card__image img {
