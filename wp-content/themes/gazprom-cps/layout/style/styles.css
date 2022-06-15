@@ -1134,6 +1134,7 @@ img {
   color: var(--color-primary);
   text-decoration: none;
   font-family: 'HeliosC';
+  white-space: nowrap;
 }
 
 @media (max-width: 949px) {
