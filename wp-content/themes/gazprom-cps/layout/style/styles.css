@@ -2362,13 +2362,6 @@ img {
           filter: contrast(0.5);
 }
 
-.direction-card__image img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .direction-card__pretitle {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
