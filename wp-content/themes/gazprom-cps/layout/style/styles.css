@@ -457,7 +457,7 @@ img {
 }
 
 .typo--h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 400;
 }
 
@@ -497,7 +497,7 @@ img {
 }
 
 .typo--secondary {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -852,7 +852,7 @@ img {
 
 @media (max-width: 949px) {
   .app-section.as-banner:not(.has-no-bg) {
-    height: clamp(250px, 20vw, 350px);
+    height: clamp(250px, 20vw, 450px);
     padding: clamp(var(--spacer-10), 5vw, var(--spacer-16)) 0;
   }
 }
