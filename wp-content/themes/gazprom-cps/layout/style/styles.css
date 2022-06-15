@@ -1248,6 +1248,10 @@ img {
   }
 }
 
+.app-header__logo img {
+  max-width: 122px;
+}
+
 @media (max-width: 949px) {
   .app-header {
     height: 65px;

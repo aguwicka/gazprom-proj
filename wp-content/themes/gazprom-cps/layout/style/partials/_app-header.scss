@@ -121,6 +121,10 @@
     @media (max-width: 949px) {
       display: none;
     }
+
+    img {
+      max-width: 122px;
+    }
   }
 
   // Логика моб меню
