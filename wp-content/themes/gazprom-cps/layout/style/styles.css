@@ -512,6 +512,7 @@ img {
     font-size: 34px;
     font-weight: 400;
     font-family: "HeliosLightC";
+    line-height: 160%;
   }
   :is(.typo--subtitle1, #app) {
     font-size: 20px;
@@ -531,10 +532,12 @@ img {
   :is(.typo--body1, #app) {
     font-size: 16px;
     font-weight: 400;
+    line-height: 140%;
   }
   :is(.typo--body2, #app) {
     font-size: 14px;
     font-weight: 400;
+    line-height: 140%;
   }
   :is(.typo--link, #app) {
     font-size: 14px;
@@ -961,6 +964,7 @@ img {
 }
 
 .app-section__pretitle:not(:only-child) {
+  margin-top: var(--spacer-3);
   margin-bottom: var(--spacer-2);
 }
 
@@ -2668,6 +2672,7 @@ img {
       -ms-grid-row-align: end;
       align-self: end;
   font-size: 52px;
+  line-height: 1;
 }
 
 .pie-part__image {
