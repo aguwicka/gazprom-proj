@@ -2562,15 +2562,8 @@ img {
   -ms-grid-rows: 100%;
       grid-template-rows: 100%;
   max-height: var(--part-card-height, 287px);
-  -webkit-transition: -webkit-transform .15s;
-  transition: -webkit-transform .15s;
-  transition: transform .15s;
-  transition: transform .15s, -webkit-transform .15s;
-}
-
-.part-card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -2580,7 +2573,12 @@ img {
 }
 
 .part-card__image {
+  z-index: -1;
   grid-area: 1/1/-1/-1;
+  -webkit-transition: -webkit-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s;
+  transition: transform .15s, -webkit-transform .15s;
 }
 
 .part-card__image img {
@@ -2588,6 +2586,15 @@ img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.part-card:hover .part-card__image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform .33s linear;
+  transition: -webkit-transform .33s linear;
+  transition: transform .33s linear;
+  transition: transform .33s linear, -webkit-transform .33s linear;
 }
 
 .part-card__overlay {
