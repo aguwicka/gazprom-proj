@@ -5,6 +5,10 @@
   --color-stop: #17a7fe;
   --color-empty: #f5f7fa;
 
+  .dark-theme & {
+    --color-empty: #232A2F;
+  }
+
   display: grid;
   grid-template-columns: 100%;
   grid-template-areas: "center";
@@ -31,9 +35,11 @@
   }
 
   &__content {
+    align-self: center;
     display: grid;
     place-items: center;
     grid-area: center;
+    gap: var(--spacer-4);
   }
 
   &__value {

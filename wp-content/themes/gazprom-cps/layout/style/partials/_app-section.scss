@@ -1,9 +1,13 @@
 @import "../variables";
 
 .app-section {
-  padding: var(--spacer-8) 0;
+  padding: var(--spacer-10) 0;
 
-  &:last-child {
+  &:first-of-type {
+    padding-top: var(--spacer-20);
+  }
+
+  &:last-of-type {
     padding-bottom: var(--spacer-20);
   }
 
@@ -32,6 +36,7 @@
 
   &.as-banner {
     padding-bottom: 0;
+    min-height: 350px;
   }
 
   &.as-banner:not(.has-no-bg) {

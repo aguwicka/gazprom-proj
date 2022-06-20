@@ -39,7 +39,7 @@
     "pretitle"
     "title"
     "description";
-  padding: var(--spacer-3);
+  padding: var(--spacer-3) var(--spacer-6);
   border-radius: 8px;
 
   @media (max-width: 767px) {
@@ -84,7 +84,7 @@
 
     // img {
     //   height: 100%;
-    //   width: 100%;
+    //   width: 100%; 
     //   object-fit: cover;
     // }
   }
