@@ -78,18 +78,28 @@
       border-radius: inherit;
       background: var(--color-brand);
       transform: translateX(-100%);
-      transition: transform 0s linear;
+      // transition: transform 0s linear;
     }
 
-    &.filled::after {
-      transform: translateX(0);
-    }
+    // &.filled::after {
+    //   transform: translateX(0);
+    // }
+
+    // .page-loaded .slick-current &.current::after {
+    //   & {
+    //     transition-duration: 5s;
+    //     transform: translateX(0);
+    //   }
+    // }
 
     .page-loaded .slick-current &.current::after {
-      & {
-        transition-duration: 5s;
-        transform: translateX(0);
-      }
+      animation: filler 5s linear forwards;
+    }
+  }
+
+  @keyframes filler {
+    to {
+      transform: translateX(0%);
     }
   }
 

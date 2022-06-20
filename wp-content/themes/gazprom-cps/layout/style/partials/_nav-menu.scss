@@ -33,7 +33,7 @@
 @media (min-width: 950px) {
   .nav-menu {
     display: flex;
-    gap: clamp(var(--spacer-2), 3.5vw, var(--spacer-12));
+    gap: clamp(var(--spacer-2), 2.5vw, var(--spacer-12));
     justify-content: flex-end;
 
     .app-header__pri-nav-link {
@@ -63,7 +63,7 @@
 
     &__sub-menu {
       position: absolute;
-      top: 100%;
+      top: 90%; // было 100%
       left: 0;
       right: 0;
       z-index: 5;
