@@ -1248,6 +1248,8 @@ img {
 }
 
 .app-header__logo {
+  -ms-grid-column-align: start;
+      justify-self: start;
   -webkit-transform: translateY(-6px);
           transform: translateY(-6px);
 }
