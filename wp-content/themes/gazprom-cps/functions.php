@@ -1,10 +1,4 @@
-
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-
-
 #enqueue style
 require get_template_directory().'/inc/scripts.php';
 
@@ -22,3 +16,15 @@ function crb_load() {
 
 /* Disable WordPress Admin Bar for all users */
 add_filter( 'show_admin_bar', '__return_false' );
+
+// Disables the block editor from managing widgets in the Gutenberg plugin.
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+// Disables the block editor from managing widgets.
+add_filter( 'use_widgets_block_editor', '__return_false' );
+
+#menu init
+require get_template_directory().'/inc/menus-init.php';
+
+#menu init
+require get_template_directory().'/inc/widgets.php';
+

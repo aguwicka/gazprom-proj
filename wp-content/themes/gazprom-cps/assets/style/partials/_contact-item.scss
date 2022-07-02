@@ -1,0 +1,36 @@
+@import "../variables";
+
+.contact-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "icon value" ". descr";
+  align-items: center;
+  gap: var(--spacer-2) var(--spacer-4);
+
+  &__icon {
+    display: flex;
+    grid-area: icon;
+  }
+
+  &__value {
+    grid-area: value;
+    color: var(--color-primary);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__descr {
+    grid-area: descr;
+    color: var(--color-secondary);
+  }
+}

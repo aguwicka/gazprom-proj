@@ -39,7 +39,7 @@
     "pretitle"
     "title"
     "description";
-  padding: var(--spacer-3);
+  padding: var(--spacer-3) var(--spacer-6);
   border-radius: 8px;
 
   @media (max-width: 767px) {
@@ -55,7 +55,7 @@
   }
 
   @media (min-width: 950px) {
-    grid-template-columns: 170px minmax(1px, 1fr);
+    grid-template-columns: auto minmax(1px, 1fr);
     grid-template-rows: auto auto minmax(1px, 1fr);
     grid-template-areas:
       "image pretitle"
@@ -69,21 +69,24 @@
   }
 
   &__image {
+    justify-self: start;
     grid-area: image;
-    width: 174px;
-    height: 174px;
+    max-width: 174px;
+    max-height: 174px;
     border-radius: 4px;
+    aspect-ratio: 1;
+    color: var(--direction-card-color-title, --color-primary);
     overflow: hidden;
 
-    @media (max-width: 767px) {
-      width: 100%;
+    .dark-theme & {
+      filter: contrast(0.5);
     }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+    // img {
+    //   height: 100%;
+    //   width: 100%; 
+    //   object-fit: cover;
+    // }
   }
 
   &__pretitle {
@@ -104,9 +107,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    overflow: hidden;
-    padding-right: var(--spacer-6);
+    padding-right: var(--spacer-10);
     color: var(--color-secondary);
+    overflow: hidden;
   }
 
   &__arrow {

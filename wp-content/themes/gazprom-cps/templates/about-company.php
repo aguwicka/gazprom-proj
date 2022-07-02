@@ -10,18 +10,18 @@ get_header();?>
     <article class="layout-default">
         <div
             class="app-section as-banner"
-            style="--app-section-bg: url('https://picsum.photos/1600/350')"
+            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
-                        <h1 class="app-section__title typo--h1">«Газпром ЦПС»</h1>
+                        <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
                         <div class="app-section__pretitle typo--secondary">
                             Компания / о компании
                         </div>
-                        <p class="app-section__description typo--body1">
-                            Оператор по созданию единых цифровых систем
-                        </p>
+                        <div class="app-section__description typo--body1">
+                            <?php the_content(); ?>
+                        </div>
                     </header>
                 </div>
             </div>
@@ -32,11 +32,17 @@ get_header();?>
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
+                        <?php if(carbon_get_the_post_meta('company_title')):?>
                         <h1 class="app-section__title typo--h2"><?= carbon_get_the_post_meta('company_title'); ?></h1>
-                        <p class="app-section__description">
-                            <?= carbon_get_the_post_meta('company_content'); ?>
-                        </p>
+                        <?php endif;?>
+
+                        <?php if(carbon_get_the_post_meta('company_content')):?>
+                        <div class="app-section__description">
+                            <?= wpautop(carbon_get_the_post_meta('company_content')); ?>
+                        </div>
+                        <?php endif;?>
                     </header>
+                    <?php if(carbon_get_the_post_meta( 'crb_company' )):?>
                     <div class="stats bg--soft">
                         <div class="stats__items">
                             <?php
@@ -60,20 +66,30 @@ get_header();?>
                                         />
                                     </svg>
                                 </div>
+                                <?php if($companyCard['crb_title']):?>
                                 <div class="stat-card__value typo--h2"><?= $companyCard['crb_title'];?></div>
+                                <?php endif;?>
+
+                                <?php if($companyCard['crb_subtext']):?>
                                 <div class="stat-card__value-unit"><?= $companyCard['crb_subtext'];?></div>
+                                <?php endif;?>
+
+                                <?php if($companyCard['crb_content']):?>
                                 <div class="stat-card__description">
                                     <?= $companyCard['crb_content'];?>
                                 </div>
+                                <?php endif;?>
                             </div>
                             <?php endforeach;?>
 
                         </div>
                     </div>
-
+                    <?php endif;?>
+                    <?php if(carbon_get_the_post_meta('company_img')):?>
                     <div class="just-media">
                         <img src="<?= carbon_get_the_post_meta('company_img'); ?>" alt="" />
                     </div>
+                    <?php endif;?>
                 </div>
             </div>
         </section>
@@ -83,11 +99,16 @@ get_header();?>
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
+                        <?php if(carbon_get_the_post_meta('task_title')):?>
                         <h1 class="app-section__title typo--h2"><?= carbon_get_the_post_meta('task_title'); ?></h1>
+                        <?php endif;?>
+                        <?php if(carbon_get_the_post_meta('task_content')):?>
                         <p class="app-section__description">
                             <?= carbon_get_the_post_meta('task_content'); ?>
                         </p>
+                        <?php endif;?>
                     </header>
+                    <?php if(carbon_get_the_post_meta('crb_tasks')):?>
                     <ul class="list">
                         <?php
                         $companyTasks = carbon_get_the_post_meta( 'crb_tasks' );
@@ -99,6 +120,7 @@ get_header();?>
                         </li>
                         <?php endforeach;?>
                     </ul>
+                    <?php endif;?>
                 </div>
             </div>
         </section>
@@ -108,16 +130,22 @@ get_header();?>
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
+                        <?php if(carbon_get_the_post_meta('services_title')):?>
                         <h1 class="app-section__title typo--h2"><?= carbon_get_the_post_meta('services_title'); ?></h1>
+                        <?php endif;?>
+                        <?php if(carbon_get_the_post_meta('services_content')):?>
                         <p class="app-section__description color--secondary">
                             <?= carbon_get_the_post_meta('services_content'); ?>
                         </p>
+                        <?php endif;?>
                     </header>
                     <!-- ЗДЕСЬ ДОЛЖНА БЫТЬ КАРТА-КАРТИНКА -->
+                    <?php if(carbon_get_the_post_meta('services_img')):?>
                     <div class="just-media">
                         <img src="<?= carbon_get_the_post_meta('services_img'); ?>" alt="" />
                     </div>
-
+                    <?php endif;?>
+                    <?php if(carbon_get_the_post_meta('crb_services')):?>
                     <div class="stats">
                         <div class="stats__items">
                             <?php
@@ -132,8 +160,12 @@ get_header();?>
                                     </svg>
 
                                 </div>
+                                <?php if($companyService['crb_title']):?>
                                 <div class="stat-card__value typo--h2"><?= $companyService['crb_title'];?></div>
+                                <?php endif;?>
+                                <?php if($companyService['crb_content']):?>
                                 <div class="stat-card__value-unit"><?= $companyService['crb_content'];?></div>
+                                <?php endif;?>
                                 <div class="stat-card__description">
                                 </div>
                             </div>
@@ -141,6 +173,7 @@ get_header();?>
 
                         </div>
                     </div>
+                    <?php endif;?>
                 </div>
             </div>
         </section>
@@ -149,156 +182,62 @@ get_header();?>
         <section class="app-section">
             <div class="container">
                 <div class="app-section__content">
-                    <header class="app-section__header">
-                        <h1 class="app-section__title text-center typo--h2">Направления</h1>
-                    </header>
                     <div class="directions">
                         <div class="directions__items">
-                            <section class="direction-card">
-                                <div class="direction-card__image">
-                                    <img src="https://picsum.photos/200/300" alt="" />
-                                </div>
-                                <div class="direction-card__pretitle typo--secondary">
-                                    Направление деятельности
-                                </div>
-                                <div class="direction-card__title typo--subtitle3">
-                                    Цифровые сервисы
-                                </div>
-                                <div class="direction-card__description">
-                                    Газпром ЦПС изучает потребности клиента предлагает и
-                                    отбирает цифровое решение и технологии, которые
-                                    оптимально подходят под решение поставленной задачи
-                                </div>
-                                <div class="direction-card__arrow">
-                                    <svg
-                                        width="8"
-                                        height="14"
-                                        viewBox="0 0 8 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L1 13"
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <a
-                                    href="lauout-direction.html"
-                                    class="direction-card__link"
-                                ></a>
-                            </section>
 
-                            <section class="direction-card">
-                                <div class="direction-card__image">
-                                    <img src="https://picsum.photos/200/301" alt="" />
-                                </div>
-                                <div class="direction-card__pretitle typo--secondary">
-                                    Направление деятельности
-                                </div>
-                                <div class="direction-card__title typo--subtitle3">
-                                    Проектные сервисы
-                                </div>
-                                <div class="direction-card__description">
-                                    Газпром ЦПС предлагает полный комплекс услуг по развитию
-                                    проектного управления и проектных сервисов.
-                                </div>
-                                <div class="direction-card__arrow">
-                                    <svg
-                                        width="8"
-                                        height="14"
-                                        viewBox="0 0 8 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L1 13"
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <a
-                                    href="lauout-direction.html"
-                                    class="direction-card__link"
-                                ></a>
-                            </section>
+                            <?php
+                            $posts = get_posts( array(
+                                'numberposts' => -1,
+                                'orderby'     => 'date',
+                                'order'       => 'DESC',
+                                'include'     => array(),
+                                'exclude'     => array(),
+                                'post_type'   => 'page',
+                                'post_parent' => 22,
+                                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
 
-                            <section class="direction-card">
-                                <div class="direction-card__image">
-                                    <img src="https://picsum.photos/200/303" alt="" />
-                                </div>
-                                <div class="direction-card__pretitle typo--secondary">
-                                    Направление деятельности
-                                </div>
-                                <div class="direction-card__title typo--subtitle3">
-                                    Концептуальный инжиниринг и комплексная экспертиза
-                                </div>
-                                <div class="direction-card__description">
-                                    Это интегрированный подход к разработке концепции на
-                                    ранних этапах проекта.
-                                </div>
-                                <div class="direction-card__arrow">
-                                    <svg
-                                        width="8"
-                                        height="14"
-                                        viewBox="0 0 8 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L1 13"
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <a
-                                    href="lauout-direction.html"
-                                    class="direction-card__link"
-                                ></a>
-                            </section>
-
-                            <section class="direction-card">
-                                <div class="direction-card__image">
-                                    <img src="https://picsum.photos/200/304" alt="" />
-                                </div>
-                                <div class="direction-card__pretitle typo--secondary">
-                                    Направление деятельности
-                                </div>
-                                <div class="direction-card__title typo--subtitle3">
-                                    Образовательные сервисы
-                                </div>
-                                <div class="direction-card__description">
-                                    Газпром ЦПС предлагает свои услуги как провайдер по
-                                    поведению обучающих курсов по управлению проектами и
-                                    концептуальному инжинирингу.
-                                </div>
-                                <div class="direction-card__arrow">
-                                    <svg
-                                        width="8"
-                                        height="14"
-                                        viewBox="0 0 8 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L1 13"
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <a
-                                    href="lauout-direction.html"
-                                    class="direction-card__link"
-                                ></a>
-                            </section>
+                            foreach ($posts as $post):
+                                ?>
+                                <section class="direction-card">
+                                    <?php if(carbon_get_post_meta($post->ID, 'direction_main_img')):?>
+                                        <div class="direction-card__image">
+                                            <img src="<?= carbon_get_post_meta($post->ID, 'direction_main_img'); ?>" alt="" />
+                                        </div>
+                                    <?php endif;?>
+                                    <?php if(carbon_get_post_meta($post->ID, 'direction_tag')):?>
+                                        <div class="direction-card__pretitle typo--secondary">
+                                            <?= carbon_get_post_meta($post->ID, 'direction_tag'); ?>
+                                        </div>
+                                    <?php endif;?>
+                                    <div class="direction-card__title typo--subtitle3">
+                                        <?= $post->post_title;?>
+                                    </div>
+                                    <div class="direction-card__description">
+                                        <?= $post->post_content;?>
+                                    </div>
+                                    <div class="direction-card__arrow">
+                                        <svg
+                                                width="8"
+                                                height="14"
+                                                viewBox="0 0 8 14"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    d="M1 1L7 7L1 13"
+                                                    stroke="currentColor"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <a
+                                            href="<?= get_permalink($post->ID);?>"
+                                            class="direction-card__link"
+                                    ></a>
+                                </section>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
@@ -316,24 +255,24 @@ get_header();?>
                         <div class="parts__items">
                             <div class="part-card">
                                 <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/311" alt="" />
+                                    <img src="<?= wp_get_attachment_url(get_post_thumbnail_id(5)); ?>" alt="" />
                                 </div>
                                 <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Клиенты</a>
+                                <a href="<?php the_permalink(5);?>" class="part-card__title"><?=  get_the_title( 5 )?></a>
                             </div>
                             <div class="part-card">
                                 <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/312" alt="" />
+                                    <img src="<?= wp_get_attachment_url(get_post_thumbnail_id(29)); ?>" alt="" />
                                 </div>
                                 <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Партнеры</a>
+                                <a href="<?php the_permalink(29);?>" class="part-card__title"><?=  get_the_title( 29 )?></a>
                             </div>
                             <div class="part-card">
                                 <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/313" alt="" />
+                                    <img src="<?= wp_get_attachment_url(get_post_thumbnail_id(79)); ?>" alt="" />
                                 </div>
                                 <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Закупки</a>
+                                <a href="<?php the_permalink(79);?>" class="part-card__title"><?=  get_the_title( 79 )?></a>
                             </div>
                         </div>
                     </div>

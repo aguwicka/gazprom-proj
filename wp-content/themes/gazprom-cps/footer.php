@@ -3,37 +3,13 @@
         <div class="app-footer__content">
             <nav class="app-footer__nav">
                 <div class="app-footer__col">
-                    <div class="app-footer__group">
-                        <a href="#" class="app-footer__link">Компания</a>
-                        <a href="#" class="app-footer__link">О компании </a>
-                        <a href="#" class="app-footer__link">Совет директоров </a>
-                        <a href="#" class="app-footer__link">Руководство</a>
-                        <a href="#" class="app-footer__link">Направления</a>
-                        <a href="#" class="app-footer__link">Контакты</a>
-                    </div>
+                    <?php dynamic_sidebar( 'footer_area_one' ); ?>
 
-                    <div class="app-footer__group">
-                        <a href="#" class="app-footer__link">Проекты</a>
-                        <a href="#" class="app-footer__link">Наши проекты</a>
-                        <a href="#" class="app-footer__link"
-                        >Реализованные проекты
-                        </a>
-                        <a href="#" class="app-footer__link">Базовые проекты </a>
-                        <a href="#" class="app-footer__link">Проекты развития</a>
-                        <a href="#" class="app-footer__link"
-                        >Перспективные проекты
-                        </a>
-                    </div>
+                    <?php dynamic_sidebar( 'footer_area_two' ); ?>
                 </div>
 
                 <div class="app-footer__col">
-                    <div class="app-footer__group">
-                        <a href="#" class="app-footer__link">Сотрудничество</a>
-                        <a href="#" class="app-footer__link">Сотрудничество</a>
-                        <a href="#" class="app-footer__link">Партнеры</a>
-                        <a href="#" class="app-footer__link">Клиенты</a>
-                        <a href="#" class="app-footer__link">Закупки</a>
-                    </div>
+                    <?php dynamic_sidebar( 'footer_area_three' ); ?>
 
                     <div class="app-footer__group">
                         <a href="#" class="app-footer__link">Карьера</a>
@@ -125,20 +101,21 @@
         </div>
     </div>
 </footer>
+
 </div>
 <?php wp_footer();?>
 <script>
     // Инициализация слайдера
-    // $('.js-slider-directions').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     fade: true,
-    //     arrows: true,
-    //     prevArrow: '.js-slider-directions-prev',
-    //     nextArrow: '.js-slider-directions-next',
-    //     autoplaySpeed: 6000,
-    // });
+    $(".js-slider-mainpage").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        fade: true,
+        arrows: true,
+        prevArrow: ".js-slider-pager-prev",
+        nextArrow: ".js-slider-pager-next",
+        autoplaySpeed: 5000,
+    });
 </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+@import "../variables";
+
+.person {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--spacer-10);
+
+  &__header {
+    display: flex;
+    gap: var(--spacer-8);
+
+    @media (max-width: 500px) {
+      flex-flow: column;
+    }
+  }
+
+  &__image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  &__image-media {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    color: var(--color-secondary);
+    max-width: 315px;
+  }
+
+  &__info-title {
+    margin-bottom: var(--spacer-3);
+  }
+}

@@ -19,6 +19,7 @@
     &__sub-menu {
       display: grid;
       gap: var(--spacer-3);
+      width: 100%;
       margin-top: var(--spacer-3);
 
       .app-header__pri-nav-link {
@@ -32,7 +33,7 @@
 @media (min-width: 950px) {
   .nav-menu {
     display: flex;
-    gap: clamp(var(--spacer-2), 4vw, var(--spacer-16));
+    gap: clamp(var(--spacer-2), 3.5vw, var(--spacer-12));
     justify-content: flex-end;
 
     .app-header__pri-nav-link {
@@ -41,7 +42,23 @@
 
     &__sub-menu-name {
       position: relative;
+      display: inline-flex;
+      gap: var(--spacer-1);
       cursor: pointer;
+
+      &::after {
+        content: "";
+        align-self: center;
+        width: var(--submenu-arrow-size, 10px);
+        height: var(--submenu-arrow-size, 10px);
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.91732 3.5415L5.00065 6.45817L2.08398 3.5415' stroke='%2371797D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .dark-theme & {
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.91732 3.5415L5.00065 6.45817L2.08398 3.5415' stroke='%23f8f8f8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+      }
     }
 
     &__sub-menu {
@@ -56,6 +73,12 @@
       width: 100vw;
       height: 95px;
       padding: 50px 0 25px 0;
+
+      :nth-last-child(1) > &,
+      :nth-last-child(2) > & {
+        left: auto;
+        justify-content: flex-end;
+      }
     }
 
     &__sub-menu-name:hover > .app-header__pri-nav-link {

@@ -10,15 +10,18 @@ get_header();?>
     <article class="layout-default">
         <div
             class="app-section as-banner"
-            style="--app-section-bg: url('https://picsum.photos/1600/351')"
+            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
-                        <h1 class="app-section__title typo--h1"><?php the_title();?>></h1>
+
+                        <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
+                        <?php if(carbon_get_the_post_meta('crb_subtitle')):?>
                         <div class="app-section__pretitle typo--secondary">
                             <?= carbon_get_the_post_meta('crb_subtitle');?>
                         </div>
+                        <?php endif;?>
                         <div class="app-section__description typo--body1">
                             <?php
                             if ( have_posts() ) :
@@ -32,7 +35,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-
+        <?php if(carbon_get_the_post_meta('crb_customers')):?>
         <section class="app-section">
             <div class="container">
                 <div class="app-section__content">
@@ -80,6 +83,7 @@ get_header();?>
                 </div>
             </div>
         </section>
+        <?php endif;?>
     </article>
 </main>
 

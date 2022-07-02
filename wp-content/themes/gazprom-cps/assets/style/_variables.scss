@@ -65,6 +65,7 @@ $pallete-default: (
   ternary: #95999b,
   ghost: rgba(0, 32, 51, 0.3),
   brand: #0968c0,
+  brand2: #2487E2,
   link: #0078d2,
   link-hover: #008efa,
   link-minor: #1c5682,
@@ -75,7 +76,7 @@ $pallete-default: (
   warning: #eb6d00,
   alert: #eb3333,
   critical: #33000f,
-  line: #f2f2f2,
+  line: #E7EBF0,
 );
 // Colors (dark theme)
 $pallete-dark: (
@@ -84,6 +85,7 @@ $pallete-dark: (
   ternary: #95999b,
   ghost: rgba(255, 255, 255, 0.3),
   brand: #0968c0,
+  brand2: #2487E2,
   link: #0f9fff,
   link-hover: #6fa5c8,
   link-minor: #57bcff,
@@ -104,30 +106,38 @@ $typos-default: (
   h1: (
     "font-size": 60px,
     "font-weight": 300,
+    "font-family": 'HeliosLightC',
   ),
   h2: (
     "font-size": 34px,
     "font-weight": 400,
+    "font-family": 'HeliosLightC',
+    "line-height": 160%,
   ),
   subtitle1: (
     "font-size": 20px,
     "font-weight": 500,
+    "font-family": 'HeliosC',
   ),
   subtitle2: (
     "font-size": 16px,
     "font-weight": 500,
+    "font-family": 'HeliosC',
   ),
   subtitle3: (
     "font-size": 18px,
     "font-weight": 400,
+    "font-family": 'HeliosC',
   ),
   body1: (
     "font-size": 16px,
     "font-weight": 400,
+    "line-height": 140%,
   ),
   body2: (
     "font-size": 14px,
     "font-weight": 400,
+    "line-height": 140%,
   ),
   link: (
     "font-size": 14px,
@@ -143,7 +153,7 @@ $typos-default: (
 // Typos (mobile)
 $typos-mobile: (
   h1: (
-    "font-size": 40px,
+    "font-size": 32px,
     "font-weight": 400,
   ),
   h2: (
@@ -175,7 +185,7 @@ $typos-mobile: (
     "font-weight": 400,
   ),
   secondary: (
-    "font-size": 8px,
+    "font-size": 10px,
     "font-weight": 400,
     "text-transform": uppercase,
   ),
@@ -206,5 +216,7 @@ $spacers: (
   18: $spacer-size * 18,
   19: $spacer-size * 19,
   20: $spacer-size * 20,
+  25: $spacer-size * 25,
+  30: $spacer-size * 30,
 );
 // end of SPACERS

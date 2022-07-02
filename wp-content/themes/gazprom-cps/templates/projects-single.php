@@ -10,18 +10,20 @@ get_header();?>
     <article class="layout-default">
         <div
             class="app-section as-banner"
-            style="--app-section-bg: url('https://picsum.photos/1600/350')"
+            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
                         <h1 class="app-section__title typo--h1">
-                            ЦУП (Центр управления проектами)
+                            <?php the_title();?>
                         </h1>
                         <div class="app-section__pretitle typo--secondary">
                             Проекты / наши проекты
                         </div>
-                        <p class="app-section__description typo--body1"></p>
+                        <div class="app-section__description typo--body1">
+                            <?php the_content();?>
+                        </div>
                     </header>
                 </div>
             </div>
@@ -32,11 +34,16 @@ get_header();?>
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
+                        <?php if(carbon_get_the_post_meta('projects_title')):?>
                         <h1 class="app-section__title typo--h2"><?= carbon_get_the_post_meta('projects_title'); ?></h1>
+                        <?php endif;?>
+                        <?php if(carbon_get_the_post_meta('projects_content')):?>
                         <p class="app-section__description">
                             <?= carbon_get_the_post_meta('projects_content'); ?>
                         </p>
+                        <?php endif;?>
                     </header>
+                    <?php if(carbon_get_the_post_meta('projects_blockquote')):?>
                     <blockquote class="speech">
                         <p class="speech__text">
                             <?= carbon_get_the_post_meta('projects_blockquote'); ?>
@@ -49,12 +56,14 @@ get_header();?>
                             <div class="speech__author-role"><?= carbon_get_the_post_meta('projects_info'); ?></div>
                         </a>
                     </blockquote>
+                    <?php endif;?>
 
                 </div>
             </div>
         </section>
 
         <!-- Фотоотчет -->
+        <?php if(carbon_get_the_post_meta('crb_lightbox')):?>
         <section class="app-section">
             <div class="container">
                 <div class="app-section__content">
@@ -63,30 +72,23 @@ get_header();?>
                     </header>
                     <div class="photos">
                         <div class="photos__items">
-                            <!-- TODO! Антошка, прикрути лайтбокс или около того -->
+                            <?php
+                            $carouselCards = carbon_get_the_post_meta('crb_lightbox');
+
+                            foreach ($carouselCards as $carouselCard):
+                            ?>
                             <div class="photo-card">
-                                <img src="https://picsum.photos/600/601" alt="">
+                                <a href="<?= $carouselCard['lightbox_image']?>" data-lightbox="Photo">
+                                    <img src="<?= $carouselCard['lightbox_image']?>" alt="">
+                                </a>
                             </div>
-                            <div class="photo-card">
-                                <img src="https://picsum.photos/600/602" alt="">
-                            </div>
-                            <div class="photo-card">
-                                <img src="https://picsum.photos/600/603" alt="">
-                            </div>
-                            <div class="photo-card">
-                                <img src="https://picsum.photos/600/604" alt="">
-                            </div>
-                            <div class="photo-card">
-                                <img src="https://picsum.photos/600/605" alt="">
-                            </div>
-                            <div class="photo-card">
-                                <img src="https://picsum.photos/600/606" alt="">
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <?php endif;?>
 
         <!-- Проекты -->
         <section class="app-section">
@@ -97,36 +99,26 @@ get_header();?>
                     </header>
                     <div class="parts has-small-cards">
                         <div class="parts__items">
-                            <div class="part-card">
-                                <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/311" alt="" />
+                            <?php
+
+                            $mainCards = get_posts( array(
+                                'numberposts' => -1,
+                                'orderby'     => 'date',
+                                'order'       => 'DESC',
+                                'post_type'   => 'page',
+                                'post_parent' => 36,
+                                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            foreach ($mainCards as $mainCard):
+                                ?>
+                                <div class="part-card">
+                                    <div class="part-card__image">
+                                        <img src="<?= wp_get_attachment_url(get_post_thumbnail_id($mainCard)); ?>" alt="" />
+                                    </div>
+                                    <div class="part-card__overlay"></div>
+                                    <a href="<?php the_permalink($mainCard->ID);?>" class="part-card__title"><?= $mainCard->post_title; ?></a>
                                 </div>
-                                <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Реализованные</a>
-                            </div>
-                            <div class="part-card">
-                                <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/312" alt="" />
-                                </div>
-                                <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Базовые</a>
-                            </div>
-                            <div class="part-card">
-                                <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/313" alt="" />
-                                </div>
-                                <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title">Проекты развития</a>
-                            </div>
-                            <div class="part-card">
-                                <div class="part-card__image">
-                                    <img src="https://picsum.photos/600/319" alt="" />
-                                </div>
-                                <div class="part-card__overlay"></div>
-                                <a href="#" class="part-card__title"
-                                >Перспективные проекты
-                                </a>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>

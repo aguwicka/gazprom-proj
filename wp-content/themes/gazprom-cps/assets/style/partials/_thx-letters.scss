@@ -1,0 +1,30 @@
+@import "../variables";
+
+.thx-letters {
+  &__items {
+    display: grid;
+
+    @media (max-width: 767px) {
+      gap: var(--container-padding-x);
+      overflow-x: auto;
+      grid-auto-flow: column;
+      margin: -30px var(--container-padding-x-negative);
+      padding: 30px var(--container-padding-x);
+      scroll-snap-type: x mandatory;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacer-5);
+    }
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      
+    }
+  }
+}

@@ -1,13 +1,5 @@
-/* abril-fatface-regular - latin */
-// @font-face {
-//   font-family: 'HeliosLightC';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local(''),
-//        url('../assets/fonts/HeliosLightC Regular.otf') format('truetype');
-// }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+@import "base/fonts";
 
 @import "variables";
 
@@ -23,6 +15,14 @@
 @import "partials/app-section";
 @import "partials/app-preloader";
 @import "partials/app-header";
+@import "partials/app-modal";
+@import "partials/app-file";
+@import "partials/app-search";
+@import "partials/app-textfield";
+@import "partials/app-textarea";
+@import "partials/app-button";
+@import "partials/app-form";
+@import "partials/app-collapse";
 @import "partials/nav-menu";
 @import "partials/case";
 @import "partials/just-media";
@@ -30,8 +30,15 @@
 @import "partials/list";
 @import "partials/modal-link";
 @import "partials/speech";
+@import "partials/contacts";
+@import "partials/contact-item";
 @import "partials/directions";
+@import "partials/card-img";
+@import "partials/thx-letters";
 @import "partials/parts";
+@import "partials/pie-part";
+@import "partials/slider-main";
+@import "partials/person";
 @import "partials/news";
 @import "partials/news-page";
 @import "partials/news-addons";
@@ -43,6 +50,7 @@
 @import "partials/projects";
 @import "partials/persons";
 @import "partials/stats";
+@import "partials/faq";
 @import "partials/goals";
 @import "partials/photos";
 @import "partials/vacancies";
