@@ -37,9 +37,9 @@
     scroll-margin-left: var(--container-padding-x);
   }
 
-  @media (min-width: 768px) {
-    box-shadow: var(--shadow-2);
-  }
+  // @media (min-width: 768px) {
+  //   box-shadow: var(--shadow-2);
+  // }
 
   &__image {
     margin-bottom: var(--spacer-4);

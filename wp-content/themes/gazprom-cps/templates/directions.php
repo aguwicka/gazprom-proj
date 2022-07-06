@@ -10,18 +10,18 @@ get_header();?>
     <article class="layout-default">
         <div
             class="app-section as-banner"
-            style="--app-section-bg: url('https://picsum.photos/1600/351')"
+            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
-                        <h1 class="app-section__title typo--h1">Направления</h1>
+                        <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
                         <div class="app-section__pretitle typo--secondary">
                             Проекты
                         </div>
-                        <p class="app-section__description typo--body1">
-                            Короткий текст в пару строк о том какая масштабная работа была сделана со стороны Газпром “ЦПС”
-                        </p>
+                        <div class="app-section__description typo--body1">
+                            <?php the_content();?>
+                        </div>
                     </header>
                 </div>
             </div>
@@ -48,12 +48,16 @@ get_header();?>
                             foreach ($posts as $post):
                             ?>
                             <section class="direction-card">
+                                <?php if(carbon_get_post_meta($post->ID, 'direction_main_img')):?>
                                 <div class="direction-card__image">
                                     <img src="<?= carbon_get_post_meta($post->ID, 'direction_main_img'); ?>" alt="" />
                                 </div>
+                                <?php endif;?>
+                                <?php if(carbon_get_post_meta($post->ID, 'direction_tag')):?>
                                 <div class="direction-card__pretitle typo--secondary">
                                     <?= carbon_get_post_meta($post->ID, 'direction_tag'); ?>
                                 </div>
+                                <?php endif;?>
                                 <div class="direction-card__title typo--subtitle3">
                                     <?= $post->post_title;?>
                                 </div>

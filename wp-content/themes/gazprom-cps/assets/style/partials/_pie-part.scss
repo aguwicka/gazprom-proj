@@ -1,0 +1,70 @@
+@import "../variables";
+
+.pie-part {
+  --color-start: #1643b8;
+  --color-stop: #17a7fe;
+  --color-empty: #f5f7fa;
+
+  .dark-theme & {
+    --color-empty: #232A2F;
+  }
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "center";
+  max-width: 284px;
+  aspect-ratio: 1/1;
+
+  &__chart {
+    position: relative;
+    grid-area: center;
+    height: 100%;
+    border-radius: 50%;
+    background-image: conic-gradient(
+      from 0deg,
+      var(--color-start),
+      var(--color-stop) var(--value),
+      var(--color-empty) var(--value)
+    );
+    mask-image: radial-gradient(
+      transparent 10%,
+      transparent 65%,
+      salmon 66%,
+      salmon
+    );
+  }
+
+  &__content {
+    align-self: center;
+    display: grid;
+    place-items: center;
+    grid-area: center;
+    gap: var(--spacer-4);
+  }
+
+  &__value {
+    align-self: end;
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  &__label {
+    
+  }
+
+  &__image {
+    align-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+}

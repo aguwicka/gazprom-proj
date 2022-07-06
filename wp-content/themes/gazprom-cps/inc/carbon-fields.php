@@ -4,7 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use Carbon_Fields\Container;
+use Carbon_Fields\Block;
 use Carbon_Fields\Field;
+use Carbon_Fields\Widget;
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
@@ -171,15 +173,101 @@ Container::make( 'post_meta', __( 'Page Options', 'crb' ) )
         Field::make('text' , 'projects_title', 'Заголовок'),
         Field::make('rich_text' , 'projects_content', 'Описание'),
         Field::make('text', 'projects_blockquote' , 'Цитата в описании'),
-        Field::make('image', 'projects_img', 'Изображение велущего проекта')
+        Field::make('image', 'projects_img', 'Изображение ведущего проекта')
             ->set_value_type('url'),
         Field::make( 'text', 'projects_name', 'Имя ведущего проекта' ),
         Field::make( 'text', 'projects_info', 'Должность ведущего проекта' ),
     ))
     ->add_tab(__('Блок 2'), array(
+        Field::make( 'complex', 'crb_lightbox', 'Фотоотчёт')
+            ->set_layout( 'tabbed-horizontal' )
+            ->add_fields( array(
+                Field::make('image', 'lightbox_image', 'Галерея')
+                    ->set_value_type('url'),
+            ) ),
         Field::make('image', 'projects_pre_img', 'Превью проекта')
             ->set_value_type('url'),
     ));
+#directors-page
+    Container::make( 'post_meta', __( 'Page Options', 'crb' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where('post_template', 'IN', ['templates/directors-page.php'])
+        ->add_tab(__('Блок 1'), array(
+            Field::make( 'complex', 'crb_directors')
+                ->set_layout( 'tabbed-horizontal' )
+                ->add_fields( array(
+                    Field::make('image', 'crb_img', 'Изображение')
+                        ->set_value_type('url'),
+                    Field::make( 'text', 'crb_percent', 'Проценты' ),
+                    Field::make( 'text', 'crb_title', 'Заголовок' ),
+                ) ),
+        ));
+
+#leads-single
+    Container::make( 'post_meta', __( 'Page Options', 'crb' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where('post_template', 'IN', ['templates/leads-single-page.php'])
+        ->add_tab(__('Блок 1'), array(
+            Field::make('image', 'leads_pre_img', 'Фотография работника')
+                ->set_value_type('url'),
+            Field::make( 'text', 'leads_desc', 'Должность работника' ),
+            Field::make( 'complex', 'crb_leads')
+                ->set_layout( 'tabbed-horizontal' )
+                ->add_fields( array(
+                    Field::make( 'text', 'crb_title', 'Заголовок' ),
+                    Field::make( 'text', 'crb_content', 'Описание' ),
+                ) ),
+        ));
+
+    #services-page
+    Container::make( 'post_meta', __( 'Page Options', 'crb' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where('post_template', 'IN', ['templates/services-page.php'])
+        ->add_tab(__('Блок 1'), array(
+            Field::make( 'text', 'services_name', 'Заголовок' ),
+            Field::make( 'text', 'services_desc', 'Описание' ),
+            Field::make( 'complex', 'crb_services')
+                ->set_layout( 'tabbed-horizontal' )
+                ->add_fields( array(
+                    Field::make('image', 'services_img', 'Иконка')
+                        ->set_value_type('url'),
+                    Field::make( 'text', 'crb_title', 'Заголовок' ),
+                    Field::make( 'text', 'crb_content', 'Описание' ),
+                ) ),
+        ))
+        ->add_tab(__('Блок 2'), array(
+            Field::make( 'text', 'modal_name', 'Заголовок' ),
+            Field::make( 'complex', 'crb_modules')
+                ->set_layout( 'tabbed-horizontal' )
+                ->add_fields( array(
+                    Field::make('image', 'direction_img', 'Изображение')
+                        ->set_value_type('url'),
+                    Field::make( 'text', 'crb_li', 'Список' ),
+                ) ),
+        ));
+
+    #front-page
+    Container::make( 'post_meta', __( 'Page Options', 'crb' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where('post_template', 'IN', ['front-page.php'])
+        ->add_tab(__('Блок 1'), array(
+            Field::make( 'complex', 'crb_slider')
+                ->set_layout( 'tabbed-horizontal' )
+                ->add_fields( array(
+                    Field::make('image', 'slide_img', 'Баннер')
+                        ->set_value_type('url'),
+                    Field::make( 'text', 'crb_title', 'Заголовок' ),
+                    Field::make( 'text', 'crb_subtitle', 'Подописание' ),
+                    Field::make( 'text', 'crb_content', 'Описание' ),
+                    Field::make( 'complex', 'crb_slider_links')
+                        ->set_layout( 'tabbed-horizontal' )
+                        ->add_fields( array(
+                            Field::make('text', 'crb_slider__title', 'Заголовок'),
+                            Field::make('text', 'crb_slider__link', 'Ссылка на страницу')
+                    ) ),
+                ) ),
+        ));
+
 
 Container::make( 'theme_options', __( 'Глобальные настройки' ) )
     ->add_fields( array(
@@ -191,4 +279,38 @@ Container::make( 'theme_options', __( 'Глобальные настройки' 
                 Field::make( 'text', 'crb_phone', 'Номер телефона' ),
             ) )
     ) );
+    class ThemeWidgetExample extends Widget {
+        // Register widget function. Must have the same name as the class
+        function __construct() {
+            $this->setup( 'theme_widget_example', 'Theme Widget - Example', 'Displays a block with title/text', array(
+                Field::make( 'complex', 'link_title', 'Меню и ссылка на него' )
+                    ->set_layout( 'tabbed-horizontal' )
+                    ->add_fields( array(
+                        Field::make( 'text', 'crb_link_title', 'Название страницы' ),
+                        Field::make( 'text', 'crb_link_link', 'ссылка' ),
+                    ) )
+            ) );
+        }
+
+        // Called when rendering the widget in the front-end
+        function front_end( $args, $instance ) {
+            $widgetLinks = carbon_get_the_post_meta('link_title');
+            $footerlinks = $instance['link_title'];
+            foreach ($footerlinks as $footerlink) {?>
+                <a href="<?= $footerlink['crb_link_link'];?>" class="app-footer__link"><?= $footerlink['crb_link_title'];?></a>
+            <?php }
+        }
+    }
+
 }
+
+
+
+
+
+function load_widgets() {
+    register_widget( 'ThemeWidgetExample' );
+}
+
+add_action( 'widgets_init', 'load_widgets' );
+

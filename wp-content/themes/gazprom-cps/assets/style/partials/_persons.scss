@@ -13,6 +13,7 @@
 .person-card {
   display: grid;
   grid-template-columns: 100%;
+  justify-items: start;
   gap: var(--spacer-1);
   text-decoration: none;
 

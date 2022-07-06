@@ -10,20 +10,19 @@ get_header();?>
     <article class="layout-default">
         <div
             class="app-section as-banner"
-            style="--app-section-bg: url('https://picsum.photos/1600/351')"
+            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
                         <h1 class="app-section__title typo--h1">
-                            Реализованные проекты
+                            <?php the_title();?>
                         </h1>
                         <div class="app-section__pretitle typo--secondary">
                             Компания / наши проекты
                         </div>
                         <p class="app-section__description typo--body1">
-                            Это проекты цифровых и проектных сервисов, реализованных в
-                            2021 году.
+                            <?php the_content();?>
                         </p>
                     </header>
                 </div>
@@ -50,9 +49,11 @@ get_header();?>
                                 foreach ($catCards as $catCard):
                             ?>
                             <a href="<?= get_permalink($catCard->ID)?>" class="project-card">
+                                <?php if(carbon_get_post_meta($catCard->ID, 'projects_pre_img')):?>
                                 <div class="project-card__image">
                                     <img src="<?= carbon_get_post_meta($catCard->ID, 'projects_pre_img'); ?>" alt="" />
                                 </div>
+                                <?php endif;?>
                                 <div class="project-card__title typo--subtitle2">
                                     <?= $catCard->post_title; ?>
                                 </div>

@@ -1,0 +1,45 @@
+@import "../variables";
+
+.app-search {
+  ::placeholder {
+    color: var(--color-secondary);
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: 'textfield submit';
+    align-items: center;
+  }
+
+  &__icon {
+    grid-area: textfield;
+    display: inline-flex;
+    padding: 0 var(--spacer-4);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  &__textfield {
+    grid-area: textfield;
+    height: 54px;
+  }
+
+  &__icon + &__textfield {
+    padding-left: var(--spacer-10);
+  }
+  
+  &__submit-btn {
+    grid-area: submit;
+    height: 54px;
+    margin-left: var(--spacer-4);
+
+    @media (pointer: coarse) {
+      display: none;
+    }
+
+    @media (min-width: 750px) {
+      min-width: 140px;
+    }
+  }
+}
