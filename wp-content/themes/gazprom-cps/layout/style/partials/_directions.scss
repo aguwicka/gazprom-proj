@@ -40,6 +40,8 @@
     "title"
     "description";
   padding: var(--spacer-3) var(--spacer-6);
+  padding-bottom: var(--spacer-10);
+  padding-right: var(--spacer-10);
   border-radius: 8px;
 
   @media (max-width: 767px) {
