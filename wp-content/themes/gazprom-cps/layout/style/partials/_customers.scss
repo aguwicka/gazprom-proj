@@ -53,4 +53,15 @@
     margin-top: var(--spacer-6);
   }
 
+  &__projects-modal-link {
+    &:hover .modal-link__name {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.customer-projects {
+  &__header {
+    margin-bottom: var(--spacer-6);
+  }
 }
