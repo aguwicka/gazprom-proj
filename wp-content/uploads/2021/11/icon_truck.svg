@@ -1,0 +1,33 @@
+<svg width="64" height="63" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="36" cy="28" r="28" fill="#DAF3F7"/>
+<rect x="1" y="17" width="50" height="1" rx="0.5" fill="#003E7C"/>
+<path d="M3.5 58H2C1.44772 58 1 57.5523 1 57V13C1 12.4477 1.44772 12 2 12H50C50.5523 12 51 12.4477 51 13V39.5" stroke="#003E7C" stroke-linecap="round"/>
+<path d="M42 15C42 14.4477 42.4477 14 43 14C43.5523 14 44 14.4477 44 15C44 15.5523 43.5523 16 43 16C42.4477 16 42 15.5523 42 15Z" fill="#003E7C"/>
+<path d="M38 15C38 14.4477 38.4477 14 39 14C39.5523 14 40 14.4477 40 15C40 15.5523 39.5523 16 39 16C38.4477 16 38 15.5523 38 15Z" fill="#003E7C"/>
+<path d="M46 15C46 14.4477 46.4477 14 47 14C47.5523 14 48 14.4477 48 15C48 15.5523 47.5523 16 47 16C46.4477 16 46 15.5523 46 15Z" fill="#003E7C"/>
+<path d="M11.5455 26.4541V29.7268H15.0909M8.81818 26.4541V29.7268H5M5 32.4541H8.81818V35.9996H5M20 35.9996H18.6364V32.4541H20M13.7273 42.4545V40H15.0909M11.5455 42.4545V40H5M11.5455 32.4541V35.9996H15.9091V32.4541H11.5455Z" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="17.2727" cy="24.5458" r="1.40909" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 24.5455C14 27 17.2727 29.7273 17.2727 29.7273C17.2727 29.7273 20.5455 27 20.5455 24.5455C20.5455 22.0909 18.9091 21 17.2727 21C15.3636 21 14 22.3636 14 24.5455Z" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="26" cy="27" r="1.5" stroke="#003E7C"/>
+<circle cx="33" cy="31" r="1.5" stroke="#003E7C"/>
+<path d="M27.5 28L31.5 30.5M34.5 30.5L38.5 27M41 26.5L44.5 28" stroke="#003E7C"/>
+<circle cx="40" cy="26" r="1.5" stroke="#003E7C"/>
+<circle cx="46.5" cy="27.5" r="2" stroke="#003E7C"/>
+<path d="M17.5 39C17.5 38.7239 17.7239 38.5 18 38.5H40.6757C40.9518 38.5 41.1757 38.7239 41.1757 39V52.8919C41.1757 53.168 40.9518 53.3919 40.6757 53.3919H18C17.7239 53.3919 17.5 53.168 17.5 52.8919V39Z" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50.7973 54.5674V56.9322L49.4459 57.9458H47.7567M26.473 57.9458H29.1757M35.5946 57.9458H41.3378" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42.8514 44.0811C42.8514 43.8049 43.0752 43.5811 43.3514 43.5811H47.5098C47.6904 43.5811 47.857 43.6785 47.9456 43.8359L50.571 48.5033C50.613 48.5781 50.6352 48.6625 50.6352 48.7484V52.8919C50.6352 53.168 50.4113 53.3919 50.1352 53.3919H43.3514C43.0752 53.3919 42.8514 53.168 42.8514 52.8919V44.0811Z" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="23.4325" cy="58.6215" r="2.87838" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="32.2162" cy="58.6215" r="2.87838" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="44.3784" cy="58.6215" r="2.87838" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="23.4324" cy="58.6218" r="1.52703" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="32.2162" cy="58.6218" r="1.52703" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="44.3784" cy="58.6218" r="1.52703" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.6757 43.041H20.4054M23.0946 43.041H41M17.6757 46.5275H41M44.3784 45.4464V49.1626H49.1081L47.0811 45.4464H44.3784Z" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.3784 50.8516V52.5408" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3514 53.8916L20.0406 56.9321H20.7298" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42.6892 44.4189H41.3378M42.6892 52.1352H41.3378" stroke="#006CBD"/>
+<path d="M17 58.3333V59C17 59.5523 16.5523 60 16 60H6C5.44772 60 5 59.5523 5 59V51C5 50.4477 5.44772 50 6 50H15" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 50V50.9048V52C9 52.5523 9.44772 53 10 53H12C12.5523 53 13 52.5523 13 52V50" stroke="#003E7C"/>
+<path d="M7 56H11M7 58H11" stroke="#003E7C" stroke-linecap="round"/>
+</svg>
+ 

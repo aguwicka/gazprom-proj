@@ -18,36 +18,24 @@ get_header(); ?>
                         <div class="news-addons__group-title typo--subtitle2">
                             Поделиться
                         </div>
-                        <div class="news-addons__group-item">Вконтакте</div>
-                        <div class="news-addons__group-item">Rutube</div>
+                        <div class="ya-share2" data-services="vkontakte,messenger,telegram,viber,whatsapp"></div>
                     </div>
                     <div class="news-addons__group">
                         <div class="news-addons__group-title typo--subtitle2">
                             Контакты для СМИ
                         </div>
-                        <div class="news-addons__group-item">+7(999)459-69-59</div>
-                        <div class="news-addons__group-item">Info@gazpromcps.ru</div>
+                        <div class="news-addons__group-item"><?= carbon_get_theme_option( 'crb_footer_phone' );?></div>
+                        <div class="news-addons__group-item"><?= carbon_get_theme_option( 'crb_footer_email' );?></div>
                     </div>
+                   <?php $output = do_shortcode('[wpb_popular_tags]');
+                   if($output !== '') { ?>
                     <div class="news-addons__group">
                         <div class="news-addons__group-title typo--subtitle2">
                             Популярные теги
                         </div>
-                        <div class="news-addons__group-item">
-                            <span>Партнёрство</span>
-                        </div>
-                        <div class="news-addons__group-item">
-                            <span>Цифровизация</span>
-                        </div>
-                        <div class="news-addons__group-item">
-                            <span>Эффективность</span>
-                        </div>
-                        <div class="news-addons__group-item">
-                            <span>Экология</span>
-                        </div>
-                        <div class="news-addons__group-item">
-                            <span>Безопасность</span>
-                        </div>
+                            <?= do_shortcode('[wpb_popular_tags]')?>
                     </div>
+                    <?php } ;?>
                 </div>
             </div>
             <?php
@@ -89,5 +77,5 @@ get_header(); ?>
         </article>
     </div>
 </main>
-
+<script src="https://yastatic.net/share2/share.js" defer></script>
 <?php get_footer(); ?>

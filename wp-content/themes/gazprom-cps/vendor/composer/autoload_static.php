@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitfe49dc6ceec58521f44063fbec6c1ef4
 {
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'tomverran\\Robot\\' => 16,
+        ),
         'C' => 
         array (
             'Carbon_Fields\\' => 14,
@@ -14,6 +18,10 @@ class ComposerStaticInitfe49dc6ceec58521f44063fbec6c1ef4
     );
 
     public static $prefixDirsPsr4 = array (
+        'tomverran\\Robot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tomverran/robots-txt-checker/src/Robot',
+        ),
         'Carbon_Fields\\' => 
         array (
             0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',

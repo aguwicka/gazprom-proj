@@ -19,7 +19,7 @@ get_header();?>
                             <?php the_title();?>
                         </h1>
                         <div class="app-section__pretitle typo--secondary">
-                            Компания / наши проекты
+                            <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
                         </div>
                         <p class="app-section__description typo--body1">
                             <?php the_content();?>

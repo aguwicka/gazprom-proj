@@ -121,3 +121,34 @@ var $hamburger = $(".js-mobile-menu-trigger");
 $hamburger.on("click", function () {
   $app.toggleClass("has-opened-mobile-menu");
 });
+
+var formTriggerButton = document.querySelectorAll('.like-button');
+var formTriggerClose = document.querySelector('.app-modal__close');
+
+formTriggerButton.forEach(function(item) {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+    var modalForm = document.querySelector('.app-modal');
+    modalForm.style.display = 'flex';
+  });
+});
+
+formTriggerClose.addEventListener('click', function(){
+  var modalForm = document.querySelector('.app-modal');
+  modalForm.style.display = 'none';
+});
+
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+  if (897 == event.detail.contactFormId) {
+    $('.app-form').hide();
+    $('.success-banner').css('display', 'flex');
+    $( ".form-reset" ).trigger( "click" );
+    setTimeout(function(){
+      $('.success-banner').css('display', 'none');
+      $('.app-modal').css('display', 'none');
+      $('.app-form').show();
+    }, 3000);
+  }
+}, false );
+
+

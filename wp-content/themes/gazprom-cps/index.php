@@ -1,5 +1,2 @@
 <?php
-
-get_header();
-
-get_footer();
+//silence is golden

@@ -14,7 +14,7 @@ get_header();?>
                     <header class="app-section__header">
                         <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
                         <div class="app-section__pretitle typo--secondary">
-                            Компания
+                            <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
                         </div>
                         <div class="app-section__description typo--body1">
                             <?php the_content();?>

@@ -17,7 +17,7 @@ get_header();?>
                     <header class="app-section__header">
                         <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
                         <div class="app-section__pretitle typo--secondary">
-                            Компания/Руководсво
+                            <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
                         </div>
                         <div class="app-section__description typo--body1">
                             <?php the_content();?>
@@ -44,16 +44,16 @@ get_header();?>
                                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                             ) );
                             foreach ($mainCards as $mainCard):
+                                $leads = carbon_get_post_meta($mainCard->ID , 'crb_leads' );
                             ?>
                             <div class="person-card">
                                 <div class="person-card__image">
                                     <img src="<?= carbon_get_post_meta($mainCard->ID, 'leads_pre_img'); ?>" alt="" />
                                 </div>
-                                <div class="person-card__title typo--subtitle2">
+                                <div class="person-card__title typo--subtitle2 <?php if (!$leads) { echo 'person-card-lock';} ?>">
                                     <div class="modal-link" tabindex="-1">
                                         <div class="modal-link__name"><?= $mainCard->post_title;?></div>
                                         <?php
-                                        $leads = carbon_get_post_meta($mainCard->ID , 'crb_leads' );
                                         if($leads):?>
                                         <div class="modal-link__inner">
                                             <div class="modal-link__content">

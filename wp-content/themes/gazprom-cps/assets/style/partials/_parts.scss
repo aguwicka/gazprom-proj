@@ -24,15 +24,28 @@
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   max-height: var(--part-card-height, 287px);
+  border-radius: 4px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    --part-card-height: 200px;
+  }
 
   &__image {
+    z-index: -1;
     grid-area: 1/1/-1/-1;
+    transition: transform .15s;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
+  }
+
+  &:hover &__image {
+    transform: scale(1.1);
+    transition: transform .33s linear;
   }
 
   &__overlay {

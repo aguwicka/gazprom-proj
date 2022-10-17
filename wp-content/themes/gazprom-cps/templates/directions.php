@@ -17,7 +17,7 @@ get_header();?>
                     <header class="app-section__header">
                         <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
                         <div class="app-section__pretitle typo--secondary">
-                            Проекты
+                            <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
                         </div>
                         <div class="app-section__description typo--body1">
                             <?php the_content();?>
@@ -64,22 +64,24 @@ get_header();?>
                                 <div class="direction-card__description">
                                     <?= $post->post_content;?>
                                 </div>
-                                <div class="direction-card__arrow">
+                                <a href="<?= get_permalink($post->ID);?>" class="direction-card__arrow">
+
                                     <svg
-                                        width="8"
-                                        height="14"
-                                        viewBox="0 0 8 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                            width="8"
+                                            height="14"
+                                            viewBox="0 0 8 14"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            d="M1 1L7 7L1 13"
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                                d="M1 1L7 7L1 13"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
                                         />
                                     </svg>
-                                </div>
+
+                                </a>
                                 <a
                                     href="<?= get_permalink($post->ID);?>"
                                     class="direction-card__link"

@@ -4,28 +4,28 @@
  * Template Post Type: page
  */
 
-get_header();?>
+get_header(); ?>
 
 <main class="app-main">
     <article class="layout-default">
         <div
-            class="app-section as-banner"
-            style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
+                class="app-section as-banner"
+                style="--app-section-bg: url('<?= wp_get_attachment_url(get_post_thumbnail_id()); ?>')"
         >
             <div class="container">
                 <div class="app-section__content">
                     <header class="app-section__header">
 
-                        <h1 class="app-section__title typo--h1"><?php the_title();?></h1>
-                        <?php if(carbon_get_the_post_meta('crb_subtitle')):?>
-                        <div class="app-section__pretitle typo--secondary">
-                            <?= carbon_get_the_post_meta('crb_subtitle');?>
-                        </div>
-                        <?php endif;?>
+                        <h1 class="app-section__title typo--h1"><?php the_title(); ?></h1>
+                        <?php if (carbon_get_the_post_meta('crb_subtitle')): ?>
+                            <div class="app-section__pretitle typo--secondary">
+                                <?= carbon_get_the_post_meta('crb_subtitle'); ?>
+                            </div>
+                        <?php endif; ?>
                         <div class="app-section__description typo--body1">
                             <?php
-                            if ( have_posts() ) :
-                                while ( have_posts() ) : the_post();
+                            if (have_posts()) :
+                                while (have_posts()) : the_post();
                                     the_content();
                                 endwhile;
                             endif;
@@ -35,56 +35,160 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <?php if(carbon_get_the_post_meta('crb_customers')):?>
-        <section class="app-section">
-            <div class="container">
-                <div class="app-section__content">
-                    <div class="customers">
-                        <div class="customers__items">
-                            <?php
-                                $cards = carbon_get_the_post_meta( 'crb_customers' );
+        <?php if (carbon_get_the_post_meta('crb_customers')): ?>
+            <section class="app-section">
+                <div class="container">
+                    <div class="app-section__content">
+                        <div class="customers">
+                            <div class="customers__items">
+                                <?php
+                                $cards = carbon_get_the_post_meta('crb_customers');
 
                                 foreach ($cards as $card):
-                            ?>
-                            <div class="customer-card">
-                                <div class="customer-card__logo">
-                                    <img src="<?= $card['crb_image'];?>" alt="">
-                                </div>
-                                <div class="customer-card__title typo--subtitle2"><?= $card['crb_name'];?></div>
-                                <p class="customer-card__description">
-                                    <?= $card['crb_content'];?>
-                                </p>
-                                <a href="<?= $card['crb_link'];?>" class="customer-card__link link"
-                                >Сайт компании</a
-                                >
-                                <div class="customer-card__summary">
-                                    <div class="case">
-                                        <div class="case__value">3</div>
-                                        <svg
-                                            class="case__icon"
-                                            width="14"
-                                            height="13"
-                                            viewBox="0 0 14 13"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
+                                    ?>
+                                    <div class="customer-card">
+                                        <div class="customer-card__logo">
+                                            <img src="<?= $card['crb_image']; ?>" alt="">
+                                        </div>
+                                        <div class="customer-card__title typo--subtitle2"><?= $card['crb_name']; ?></div>
+                                        <p class="customer-card__description">
+                                            <?= $card['crb_content']; ?>
+                                        </p>
+                                        <a href="<?= $card['crb_link']; ?>" class="customer-card__link link"
+                                        >Сайт компании</a
                                         >
-                                            <path
-                                                d="M13.9004 4.80664L14.2897 5.72775L14.9004 5.46964V4.80664H13.9004ZM10.3379 2.48633H9.33789V3.48633H10.3379V2.48633ZM4.05664 2.48633V3.48633H5.05664V2.48633H4.05664ZM0.494141 4.80664H-0.505859V5.47035L0.105743 5.72813L0.494141 4.80664ZM5.23438 2.48633H4.23438V3.48633H5.23438V2.48633ZM9.16016 2.48633V3.48633H10.1602V2.48633H9.16016ZM13.9004 6.01953H14.9004V4.59222L13.5589 5.07965L13.9004 6.01953ZM8.86719 7.10938L8.79491 6.11199L7.86719 6.17922V7.10938H8.86719ZM5.5332 7.10938H6.5332V6.17897L5.60522 6.11197L5.5332 7.10938ZM0.494141 6.01953L0.835641 5.07965L-0.505859 4.59222V6.01953H0.494141ZM7.19727 7.07227C9.62341 7.07227 12.0221 6.68616 14.2897 5.72775L13.5111 3.88553C11.5365 4.72009 9.41175 5.07227 7.19727 5.07227V7.07227ZM14.9004 4.80664V4.41406H12.9004V4.80664H14.9004ZM14.9004 4.41406C14.9004 3.61561 14.6897 2.83829 14.1136 2.26609C13.5387 1.69503 12.7588 1.48633 11.9551 1.48633V3.48633C12.4346 3.48633 12.6273 3.60868 12.7042 3.68508C12.78 3.76034 12.9004 3.94689 12.9004 4.41406H14.9004ZM11.9551 1.48633H10.3379V3.48633H11.9551V1.48633ZM11.3379 2.48633V1.87109H9.33789V2.48633H11.3379ZM11.3379 1.87109C11.3379 1.13613 11.1329 0.416879 10.5723 -0.104703C10.0249 -0.613962 9.30165 -0.78125 8.5918 -0.78125V1.21875C9.01866 1.21875 9.16848 1.32099 9.20996 1.35959C9.2382 1.38585 9.33789 1.49278 9.33789 1.87109H11.3379ZM8.5918 -0.78125H5.79688V1.21875H8.5918V-0.78125ZM5.79688 -0.78125C5.10064 -0.78125 4.38742 -0.609366 3.84234 -0.109713C3.2823 0.403661 3.05664 1.11792 3.05664 1.87109H5.05664C5.05664 1.51098 5.15618 1.39907 5.19379 1.3646C5.24637 1.3164 5.40327 1.21875 5.79688 1.21875V-0.78125ZM3.05664 1.87109V2.48633H5.05664V1.87109H3.05664ZM4.05664 1.48633H2.43945V3.48633H4.05664V1.48633ZM2.43945 1.48633C1.63935 1.48633 0.861671 1.69614 0.286872 2.26451C-0.289842 2.83478 -0.505859 3.61105 -0.505859 4.41406H1.49414C1.49414 3.95145 1.61504 3.76386 1.69311 3.68666C1.77309 3.60757 1.96807 3.48633 2.43945 3.48633V1.48633ZM-0.505859 4.41406V4.80664H1.49414V4.41406H-0.505859ZM0.105743 5.72813C2.37828 6.68598 4.77055 7.07227 7.19727 7.07227V5.07227C4.98336 5.07227 2.86391 4.72027 0.882538 3.88515L0.105743 5.72813ZM6.23438 2.48633V1.91797H4.23438V2.48633H6.23438ZM6.23438 1.91797C6.23438 1.90836 6.23323 2.04244 6.09726 2.17473C5.9654 2.30302 5.84268 2.29688 5.87305 2.29688V0.296875C5.49326 0.296875 5.0512 0.402054 4.70255 0.741282C4.34978 1.08451 4.23438 1.52914 4.23438 1.91797H6.23438ZM5.87305 2.29688H8.52148V0.296875H5.87305V2.29688ZM8.52148 2.29688C8.55185 2.29688 8.42913 2.30302 8.29727 2.17473C8.16131 2.04244 8.16016 1.90836 8.16016 1.91797H10.1602C10.1602 1.52914 10.0447 1.08451 9.69198 0.741282C9.34333 0.402054 8.90128 0.296875 8.52148 0.296875V2.29688ZM8.16016 1.91797V2.48633H10.1602V1.91797H8.16016ZM9.16016 1.48633H5.23438V3.48633H9.16016V1.48633ZM2.43945 13.0723H11.9551V11.0723H2.43945V13.0723ZM11.9551 13.0723C12.7588 13.0723 13.5387 12.8636 14.1136 12.2925C14.6897 11.7203 14.9004 10.943 14.9004 10.1445H12.9004C12.9004 10.6117 12.78 10.7983 12.7042 10.8735C12.6273 10.9499 12.4346 11.0723 11.9551 11.0723V13.0723ZM14.9004 10.1445V6.01953H12.9004V10.1445H14.9004ZM13.5589 5.07965C11.826 5.70928 10.3231 6.00125 8.79491 6.11199L8.93946 8.10676C10.6457 7.98312 12.3302 7.654 14.2419 6.95941L13.5589 5.07965ZM7.86719 7.10938V7.56641H9.86719V7.10938H7.86719ZM7.86719 7.56641C7.86719 7.58935 7.86375 7.57334 7.8785 7.53302C7.89464 7.48893 7.92713 7.43142 7.98209 7.37899C8.09758 7.26881 8.19159 7.28711 8.11719 7.28711V9.28711C8.52326 9.28711 8.99227 9.17943 9.36264 8.82608C9.74055 8.46555 9.86719 7.99166 9.86719 7.56641H7.86719ZM8.11719 7.28711H6.2832V9.28711H8.11719V7.28711ZM6.2832 7.28711C6.20301 7.28711 6.29982 7.2674 6.41819 7.38099C6.54328 7.50102 6.5332 7.6159 6.5332 7.56641H4.5332C4.5332 7.98566 4.65496 8.4609 5.03347 8.82409C5.40526 9.18084 5.87707 9.28711 6.2832 9.28711V7.28711ZM6.5332 7.56641V7.10938H4.5332V7.56641H6.5332ZM5.60522 6.11197C4.07122 6.00121 2.56838 5.70923 0.835641 5.07965L0.15264 6.95941C2.06444 7.65405 3.74909 7.98316 5.46119 8.10678L5.60522 6.11197ZM-0.505859 6.01953V10.1445H1.49414V6.01953H-0.505859ZM-0.505859 10.1445C-0.505859 10.9475 -0.289842 11.7238 0.286872 12.2941C0.861671 12.8625 1.63935 13.0723 2.43945 13.0723V11.0723C1.96807 11.0723 1.77309 10.951 1.69311 10.8719C1.61504 10.7947 1.49414 10.6071 1.49414 10.1445H-0.505859Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php endforeach;?>
+                                        <?php if ($card['crb_association']): ?>
+                                            <div class="customer-card__summary">
+                                                <div
+                                                        class="customer-card__projects-modal-link modal-link"
+                                                        tabindex="-1"
+                                                >
+                                                    <div class="modal-link__name">
+                                                        <div class="case">
+                                                            <div class="case__value"><?= (count(
+                                                                    $card['crb_association']
+                                                                    ) ) ?></div>
+                                                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                      d="M16 5.75025C16 4.94335 15.7812 4.15781 15.1829 3.57956C14.5858 3.00246 13.7759 2.79156 12.9412 2.79156H12.2797C12.214 2.18852 11.9851 1.61823 11.5051 1.1837C10.9366 0.669057 10.1855 0.5 9.44828 0.5H6.54564C5.82257 0.5 5.08186 0.673701 4.51578 1.17864C4.0343 1.60811 3.7908 2.1767 3.72122 2.79156H3.05882C2.22788 2.79156 1.42023 3.00359 0.823282 3.57797C0.224343 4.15426 0 4.93874 0 5.75025V11.5413C0 12.3528 0.224343 13.1373 0.823282 13.7136C1.42023 14.288 2.22788 14.5 3.05882 14.5H12.9412C13.7759 14.5 14.5858 14.2891 15.1829 13.712C15.7812 13.1337 16 12.3482 16 11.5413V5.75025ZM1.03854 7.37269C1.39243 7.49782 1.73803 7.61051 2.07708 7.71184C3.55113 8.15234 4.90141 8.37778 6.27181 8.47406V8.93592C6.27181 9.40963 6.54564 9.66425 7.05071 9.66425H8.95538C9.45436 9.66425 9.73428 9.40963 9.73428 8.93592V8.47406C11.0997 8.37778 12.4491 8.15235 13.9229 7.71185C14.2619 7.61052 14.6076 7.49782 14.9615 7.37269V11.5413C14.9615 12.8203 14.2738 13.4894 12.9412 13.4894H3.05882C1.73834 13.4894 1.03854 12.8203 1.03854 11.5413V7.37269ZM7.31034 8.42664V8.65367H8.69574V8.42647C8.46412 8.43324 8.23218 8.43656 8 8.43656C7.76979 8.43656 7.53989 8.4333 7.31034 8.42664ZM1.03854 6.14698V5.75025C1.03854 4.47124 1.73834 3.80213 3.05882 3.80213H4.73834V3.18039C4.73834 2.05534 5.41379 1.51057 6.54564 1.51057H9.44828C10.6288 1.51057 11.2617 2.05534 11.2617 3.18039V3.80213H12.9412C14.2738 3.80213 14.9615 4.47124 14.9615 5.75025V6.14698C12.7586 7.05294 10.4097 7.42598 8 7.42598C5.59026 7.42598 3.24746 7.05294 1.03854 6.14698ZM9.8945 2.79156C9.78224 2.66645 9.60656 2.6001 9.37525 2.6001H6.62475C6.39344 2.6001 6.21776 2.66645 6.1055 2.79156C6.01102 2.89684 5.96146 3.04375 5.96146 3.22776V3.80213H10.0385V3.22776C10.0385 3.04375 9.98898 2.89684 9.8945 2.79156Z"
+                                                                      fill="#0968C0"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="modal-link__inner">
+                                                        <div class="modal-link__content">
+                                                            <article class="sssssss">
+                                                                <header class="customer-projects__header">
+                                                                    <div
+                                                                            class="customer-projects__pretitle typo--secondary"
+                                                                    >
+                                                                        <?= $card['crb_name']; ?>
+                                                                    </div>
+                                                                    <h1 class="customer-projects__title typo--h2">
+                                                                        Проекты
+                                                                    </h1>
+                                                                </header>
+                                                                <div class="customer-projects__content">
+                                                                    <div class="projects">
+                                                                        <div class="projects__items">
+                                                                            <?php foreach ($card['crb_association'] as $post_item): ?>
+                                                                                <a href="<?= get_the_permalink(
+                                                                                    $post_item['id']
+                                                                                ); ?>"
+                                                                                   class="project-card">
+                                                                                    <div class="project-card__image">
+                                                                                        <img
+                                                                                                src="<?= wp_get_attachment_url
+                                                                                                (
+                                                                                                    get_post_thumbnail_id
+                                                                                                    (
+                                                                                                        $post_item['id']
+                                                                                                    )
+                                                                                                ); ?>"
+                                                                                                alt=""
+                                                                                        />
+                                                                                    </div>
+                                                                                    <div
+                                                                                            class="project-card__title typo--subtitle2"
+                                                                                    >
+                                                                                        <?= get_the_title(
+                                                                                            $post_item['id']
+                                                                                        ); ?>
+                                                                                    </div>
+                                                                                    <div class="project-card__description">
+                                                                                        <?= get_the_content(
+                                                                                            $post_item['id']
+                                                                                        ); ?>
+                                                                                    </div>
+                                                                                </a>
+                                                                            <?php endforeach; ?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endforeach; ?>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <?php endif;?>
+            </section>
+        <?php endif; ?>
+        <?php $mails = carbon_get_the_post_meta('crb_good_mail');
+        if ($mails):
+            ?>
+            <section class="app-section is-dark">
+                <div class="container">
+                    <div class="app-section__content">
+                        <header class="app-section__header">
+                            <h1 class="app-section__title typo--h2">
+                                Благодарственные письма
+                            </h1>
+                        </header>
+                        <div class="thx-letters">
+                            <div class="thx-letters__items">
+                                <?php
+                                foreach ($mails as $mail):
+                                    ?>
+                                    <figure class="card-img">
+                                        <?php if ($mail['crb_image']): ?>
+                                            <div class="card-img__media-wrap">
+                                                <a href="<?= $mail['crb_image']; ?>" data-lightbox="letters">
+                                                    <img
+                                                            class="card-img__media"
+                                                            src="<?= $mail['crb_image']; ?>"
+                                                            alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($mail['crb_name'] && $mail['crb_content']): ?>
+                                            <figcaption class="card-img__caption">
+                                                <div class="card-img__caption-title typo--subtitle2">
+                                                    <?= $mail['crb_name']; ?>
+                                                </div>
+                                                <div class="card-img__caption-text typo--body2">
+                                                    <?= $mail['crb_content']; ?>
+                                                </div>
+                                            </figcaption>
+                                        <?php endif; ?>
+                                    </figure>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
     </article>
 </main>
 
-<?php get_footer()?>
+<?php get_footer() ?>

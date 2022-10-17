@@ -12,7 +12,7 @@ get_header();?>
             selector: '#procedures',
             template: 'light',
             mode: 'normal',
-            url: '?procedure%5Bcategory%5D=actual&procedure%5Bcustomers%5D%5B7118%5D=%D0%93%D0%90%D0%97%D0%9F%D0%A0%D0%9E%D0%9C%20%D0%A6%D0%9F%D0%A1'
+            url: '?procedure%5Bcategory%5D=archive&search=газпром+цпс'
         })
 
     });
@@ -30,7 +30,7 @@ get_header();?>
                             <?php the_title();?>
                         </h1>
                         <div class="app-section__pretitle typo--secondary">
-                            Компания / Закупки
+                            <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
                         </div>
                         <p class="app-section__description typo--body1">
                             <?php the_content();?>

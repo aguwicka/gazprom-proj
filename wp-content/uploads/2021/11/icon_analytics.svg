@@ -1,0 +1,19 @@
+<svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="33" cy="28" r="28" fill="#DAF3F7"/>
+<path d="M24 30L2 30C1.44771 30 0.999999 30.4477 0.999999 31L1 62C1 62.5523 1.44772 63 2 63L47.5 63C48.0523 63 48.5 62.5523 48.5 62L48.5 60M36 30L47.5 30C48.0523 30 48.5 30.4477 48.5 31L48.5 46.5" stroke="#003E7C" stroke-linecap="round"/>
+<path d="M18.9253 55C11.9025 55 5.99998 55 5.99998 55M18.4883 59.4958H5.99998M23.9831 55C16.9602 55 21.1732 55 21.1732 55" stroke="#003E7C" stroke-linecap="round"/>
+<path d="M11.5 42.5V43H12H19.4856C19.2432 47.2106 15.9586 50.5 12 50.5C7.88599 50.5 4.5 46.9473 4.5 42.5C4.5 38.2343 7.61519 34.7915 11.5 34.5176V42.5Z" stroke="#003E7C"/>
+<path d="M13.5 33.5164C17.2438 33.7628 20.2372 36.7562 20.4836 40.5H13.5V33.5164Z" stroke="#006CBD"/>
+<path d="M4 15H12" stroke="#003E7C" stroke-linecap="round"/>
+<rect x="27.5" y="11.5" width="5" height="13" rx="0.5" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="43.5" y="11.5" width="5" height="13" rx="0.5" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="35.5" y="15.5" width="5" height="9" rx="0.5" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 20.9629L16.5 17L12 20L8 18.9629L4 20.9629" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29.4953 52L26.1985 56.4004C25.7045 57.0597 26.1749 58 26.9988 58H50.523C51.2304 58 51.7142 57.2855 51.4514 56.6286L50 53" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 55.0526H50M44.7202 52L45.5 58M38.917 52L38.5 58M33.6534 52L31.5 58" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 52V31C26 30.4477 26.4477 30 27 30H28" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30 29V31M31.1765 29V29.0588C31.1765 29.6111 31.6242 30.0588 32.1765 30.0588H33M33 30.0588V29M33 30.0588V31" stroke="#006CBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30.7164 47.8757L29.0209 50.4499C28.583 51.1149 29.0599 52 29.8561 52H47.2397C48.0157 52 48.496 51.1545 48.0986 50.4879L39.6991 36.3981C39.3173 35.7576 38.394 35.7452 37.9952 36.3753L37.1308 37.7411M31.9261 45.9645L35.3959 40.4822" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45.5 46.5L42.5 52M43 41.5L37 52M40.5 38L32 52" stroke="#003E7C" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1.5" y="11.5" width="22" height="13" rx="0.5" stroke="#003E7C" stroke-linecap="round"/>
+</svg>

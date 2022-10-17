@@ -4,6 +4,7 @@
     <include_path>
       <path value="$PROJECT_DIR$/vendor/htmlburger/carbon-fields" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/tomverran/robots-txt-checker" />
     </include_path>
   </component>
 </project>

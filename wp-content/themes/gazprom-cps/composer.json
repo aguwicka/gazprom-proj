@@ -1,5 +1,6 @@
 {
     "require": {
-        "htmlburger/carbon-fields": "^3.3"
+        "htmlburger/carbon-fields": "^3.3",
+        "tomverran/robots-txt-checker": "^1.17"
     }
 }

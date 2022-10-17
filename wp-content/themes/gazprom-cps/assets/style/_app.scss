@@ -17,8 +17,7 @@
   --shadow-3: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   --shadow-4: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   --border-radius: 8px;
-  --font-family: 'HeliosLightC', -apple-system, "Open Sans", "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif;
+  --font-family: 'HeliosLightC';
 }
 
 .app {
@@ -35,6 +34,16 @@
 
   &.has-opened-mobile-menu {
     overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: var(--bg-default);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-system);
   }
 }
 
@@ -71,4 +80,9 @@
   @media (min-width: $screen-desktop-s) {
     max-width: 1150px;
   }
+}
+
+// Раздел закупки
+.procedures {
+  color: #0e2c40;
 }

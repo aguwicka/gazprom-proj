@@ -36,7 +36,7 @@ function register_widget_areas() {
         'name'          => 'Footer area four',
         'id'            => 'footer_area_four',
         'description'   => 'This widget area discription',
-        'before_widget' => '<div class="app-footer__group footer-area-three">',
+        'before_widget' => '<div class="app-footer__group footer-area-four">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
