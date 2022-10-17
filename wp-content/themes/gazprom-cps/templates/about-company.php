@@ -215,7 +215,8 @@ get_header();?>
                                     <div class="direction-card__description">
                                         <?= $post->post_content;?>
                                     </div>
-                                    <div class="direction-card__arrow">
+                                    <a href="<?= get_permalink($post->ID); ?>" class="direction-card__arrow">
+
                                         <svg
                                                 width="8"
                                                 height="14"
@@ -230,7 +231,8 @@ get_header();?>
                                                     stroke-linejoin="round"
                                             />
                                         </svg>
-                                    </div>
+
+                                    </a>
                                     <a
                                             href="<?= get_permalink($post->ID);?>"
                                             class="direction-card__link"
