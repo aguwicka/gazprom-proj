@@ -154,8 +154,8 @@
         autoplay: true,
         fade: true,
         arrows: true,
-        prevArrow: '.js-slider-directions-prev',
-        nextArrow: '.js-slider-directions-next',
+        prevArrow: ".js-slider-pager-prev",
+        nextArrow: ".js-slider-pager-next",
         autoplaySpeed: 5000,
     });
 </script>
